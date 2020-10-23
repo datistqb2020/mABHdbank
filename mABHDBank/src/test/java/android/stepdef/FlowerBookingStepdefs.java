@@ -24,6 +24,11 @@ public class FlowerBookingStepdefs extends TestBase {
     @When("^I login with \"([^\"]*)\" and \"([^\"]*)\"$")
     public void iLoginWithAnd(String arg0, String arg1) throws Exception {
         // Write code here that turns the phrase above into concrete actions
+        waitElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']"));
+        androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']")).click();
+        waitElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']"));
+        androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']")).click();
+
         try {
             if (androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='8']/android.widget.RelativeLayout[@index='0']/android.widget.ImageView[@index='2']")).isDisplayed()) {
                 // Tap on icon x in text box user name
