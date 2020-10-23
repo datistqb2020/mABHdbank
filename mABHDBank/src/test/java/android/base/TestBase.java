@@ -139,9 +139,6 @@ public class TestBase {
     }
 
     public void scrollValuePicker(){
-//        int x = 509;
-//        int start_y = 1894;
-//        int end_y = 1219;
 
         int x = androidDriver.manage().window().getSize().width / 2;
         int start_y = (int) (androidDriver.manage().window().getSize().height * 0.6);

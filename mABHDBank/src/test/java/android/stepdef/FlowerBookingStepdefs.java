@@ -59,8 +59,12 @@ public class FlowerBookingStepdefs extends TestBase {
 
     @And("^I enable location$")
     public void iEnableLocation() throws Exception{
-        waitElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']"));
-        androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']")).click();
+        try {
+            waitElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']"));
+            androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']")).click();
+        }catch (Exception e){
+
+        }
     }
 
     @And("^I click \"([^\"]*)\"$")
@@ -84,64 +88,8 @@ public class FlowerBookingStepdefs extends TestBase {
     public void iChooseAFlower() throws Exception{
         waitElement(By.xpath("//android.view.ViewGroup[@index='0']/android.widget.TextView[@index='0']"));
         androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='0']/android.widget.TextView[@index='0']")).click();
-    }
-
-    @And("^I choose \"([^\"]*)\"$")
-    public void iChoose(String arg0) throws Exception {
-        // Write code here that turns the phrase above into concrete actions
         waitElement(By.xpath("//android.view.ViewGroup[@index='3']/android.widget.TextView[@index='1']"));
         androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='3']/android.widget.TextView[@index='1']")).click();
-    }
-
-    @And("^I fill all information booking$")
-    public void iFillAllInformationBooking() throws Exception{
-        waitElement(By.xpath("//android.view.ViewGroup[@index='3']/android.view.ViewGroup[@index='0']/android.widget.TextView"));
-        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='3']/android.view.ViewGroup[@index='0']/android.widget.TextView")).click();
-        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='0']/android.view.ViewGroup[@index='3']/android.widget.EditText[@index='1']")).sendKeys("datnt14@hdbank.com.vn");
-        try {
-            if (androidDriver.isKeyboardShown()) {
-                androidDriver.hideKeyboard();
-            }
-        } catch (Exception e) {
-            e.getMessage();
-        }
-        scrollUpHalf();
-        androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Thông tin người nhận']")).click();
-        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='7']/android.view.ViewGroup[@index='0']/android.widget.TextView")).click();
-        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='0']/android.view.ViewGroup[@index='7']/android.widget.EditText[@index='1']")).sendKeys("Nguyen Van A");
-        try {
-            if (androidDriver.isKeyboardShown()) {
-                androidDriver.hideKeyboard();
-            }
-        } catch (Exception e) {
-            e.getMessage();
-        }
-        androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Thông tin người nhận']")).click();
-        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='8']/android.view.ViewGroup[@index='0']/android.widget.TextView")).click();
-        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='0']/android.view.ViewGroup[@index='8']//android.widget.EditText[@index='1']")).sendKeys("0682365489");
-        try {
-            if (androidDriver.isKeyboardShown()) {
-                androidDriver.hideKeyboard();
-            }
-        } catch (Exception e) {
-            e.getMessage();
-        }
-        androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Thông tin người nhận']")).click();
-        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='9']/android.view.ViewGroup[@index='0']/android.widget.TextView")).click();
-        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='0']/android.view.ViewGroup[@index='9']/android.widget.EditText[@index='1']")).sendKeys("174 phan dang luu,p3,phu nhuan");
-        try {
-            if (androidDriver.isKeyboardShown()) {
-                androidDriver.hideKeyboard();
-            }
-        } catch (Exception e) {
-            e.getMessage();
-        }
-        androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Thông tin người nhận']")).click();
-        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='11']/android.widget.TextView[@index='0']")).click();
-        waitElement(By.xpath("//android.view.ViewGroup[@index='1']/android.view.ViewGroup[@index='0']/android.widget.TextView[@index='2']"));
-        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='0']/android.view.ViewGroup[@index='0']/android.widget.TextView")).click();
-        waitElement(By.xpath("//android.widget.TextView[@text='Tiếp tục']"));
-        androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Tiếp tục']")).click();
     }
 
     @Then("^I fill booking date$")
@@ -157,12 +105,6 @@ public class FlowerBookingStepdefs extends TestBase {
         androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Chọn']")).click();
         waitElement(By.xpath("//android.widget.TextView[@text='Ngày nhận hàng']"));
         androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Tiếp tục']")).click();
-    }
-
-    @And("^I confirm flower booking$")
-    public void iConfirmFlowerBooking() throws Exception{
-        waitElement(By.xpath("//android.widget.TextView[@text='Thông tin xác nhận']"));
-        androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Xác nhận']")).click();
     }
 
     @And("^I get amount total before doing transaction for booking flower$")
@@ -233,5 +175,78 @@ public class FlowerBookingStepdefs extends TestBase {
     @Then("^I scroll up$")
     public void iScrollUp() throws Exception{
         scrollToUp();
+    }
+
+    @And("^I confirm the above transaction$")
+    public void iConfirmTheAboveTransaction() throws Exception{
+        waitElement(By.xpath("//android.widget.TextView[@text='Thông tin xác nhận']"));
+        androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Xác nhận']")).click();
+    }
+
+    @And("^I fill email \"([^\"]*)\"$")
+    public void iFillEmail(String arg0) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
+        waitElement(By.xpath("//android.view.ViewGroup[@index='3']/android.view.ViewGroup[@index='0']/android.widget.TextView"));
+        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='3']/android.view.ViewGroup[@index='0']/android.widget.TextView")).click();
+        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='0']/android.view.ViewGroup[@index='3']/android.widget.EditText[@index='1']")).sendKeys(arg0);
+        try {
+            if (androidDriver.isKeyboardShown()) {
+                androidDriver.hideKeyboard();
+            }
+        } catch (Exception e) {
+            e.getMessage();
+        }
+    }
+
+    @Then("^I fill receiver name \"([^\"]*)\"$")
+    public void iFillReceiverName(String arg0) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
+        scrollUpHalf();
+        androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Thông tin người nhận']")).click();
+        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='7']/android.view.ViewGroup[@index='0']/android.widget.TextView")).click();
+        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='0']/android.view.ViewGroup[@index='7']/android.widget.EditText[@index='1']")).sendKeys(arg0);
+        try {
+            if (androidDriver.isKeyboardShown()) {
+                androidDriver.hideKeyboard();
+            }
+        } catch (Exception e) {
+            e.getMessage();
+        }
+    }
+
+    @And("^I fill phone number \"([^\"]*)\"$")
+    public void iFillPhoneNumber(String arg0) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
+        androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Thông tin người nhận']")).click();
+        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='8']/android.view.ViewGroup[@index='0']/android.widget.TextView")).click();
+        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='0']/android.view.ViewGroup[@index='8']//android.widget.EditText[@index='1']")).sendKeys(arg0);
+        try {
+            if (androidDriver.isKeyboardShown()) {
+                androidDriver.hideKeyboard();
+            }
+        } catch (Exception e) {
+            e.getMessage();
+        }
+    }
+
+    @And("^I fill address \"([^\"]*)\"$")
+    public void iFillAddress(String arg0) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
+        androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Thông tin người nhận']")).click();
+        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='9']/android.view.ViewGroup[@index='0']/android.widget.TextView")).click();
+        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='0']/android.view.ViewGroup[@index='9']/android.widget.EditText[@index='1']")).sendKeys(arg0);
+        try {
+            if (androidDriver.isKeyboardShown()) {
+                androidDriver.hideKeyboard();
+            }
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Thông tin người nhận']")).click();
+        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='11']/android.widget.TextView[@index='0']")).click();
+        waitElement(By.xpath("//android.view.ViewGroup[@index='1']/android.view.ViewGroup[@index='0']/android.widget.TextView[@index='2']"));
+        androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='0']/android.view.ViewGroup[@index='0']/android.widget.TextView")).click();
+        waitElement(By.xpath("//android.widget.TextView[@text='Tiếp tục']"));
+        androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Tiếp tục']")).click();
     }
 }
