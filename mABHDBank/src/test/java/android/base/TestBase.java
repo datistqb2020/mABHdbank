@@ -69,10 +69,10 @@ public class TestBase {
 //        cap.setCapability("app", appRelease.getAbsolutePath());
         cap.setCapability("app", "D:\\DatHdbank\\documents\\UAT\\androidSource\\mABHdbank\\mABHDBank\\drivers\\app-release.apk");
         cap.setCapability("platformName", "android");
-        cap.setCapability("deviceName", "R58N339HS3A");
+        cap.setCapability("deviceName", "988a1b37463155383730");
         cap.setCapability("appPackage", "com.vnpay.hdbank");
         cap.setCapability("appActivity", "com.vnpay.hdbank.activity.SplashActivity");
-        cap.setCapability("platformVersion", "10.0");
+        cap.setCapability("platformVersion", "9.0");
         cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 300);
         try {
             androidDriver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), cap);
@@ -90,10 +90,10 @@ public class TestBase {
 //        cap.setCapability("app", appRelease.getAbsolutePath());
         cap.setCapability("app", "D:\\DatHdbank\\documents\\UAT\\androidSource\\mABHdbank\\mABHDBank\\drivers\\app-release.apk");
         cap.setCapability("platformName", "android");
-        cap.setCapability("deviceName", "R58N339HS3A");
+        cap.setCapability("deviceName", "988a1b37463155383730");
         cap.setCapability("appPackage", "com.vnpay.hdbank");
         cap.setCapability("appActivity", "com.vnpay.hdbank.activity.SplashActivity");
-        cap.setCapability("platformVersion", "10.0");
+        cap.setCapability("platformVersion", "9.0");
         // prevent Android: don’t uninstall app before new session
         cap.setCapability("noReset", "true");
         try {

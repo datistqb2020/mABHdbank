@@ -6,7 +6,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 @CucumberOptions(
         features = {"src/test/java/android/feature"},
         glue = "android",
-        tags = {"@KHCN_booking_flower-01"},
+        tags = {"@KHCN_booking_flower-02"},
         plugin = {
                 "html:target/result",
                 "pretty",

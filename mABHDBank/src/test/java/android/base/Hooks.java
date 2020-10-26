@@ -37,6 +37,7 @@ public class Hooks extends TestBase {
             scenario.embed(screenshot,"image/png");
         }
         androidDriver.quit();
+        
     }
 
     @After("@UninstallAndroid")

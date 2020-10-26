@@ -15,6 +15,7 @@ import java.awt.*;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class FlowerBookingStepdefs extends TestBase {
     private double d_beforeAmount = 0;
@@ -31,9 +32,7 @@ public class FlowerBookingStepdefs extends TestBase {
             androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']")).click();
 
         }catch (Exception e){
-
         }
-
         try {
             if (androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='8']/android.widget.RelativeLayout[@index='0']/android.widget.ImageView[@index='2']")).isDisplayed()) {
                 // Tap on icon x in text box user name
@@ -89,7 +88,10 @@ public class FlowerBookingStepdefs extends TestBase {
             case "Tiếp tục":
                 waitElement(By.xpath("//android.view.ViewGroup[@index='2']/android.view.ViewGroup[@index='2']/android.widget.TextView[@index='1']"));
                 androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='2']/android.view.ViewGroup[@index='2']/android.widget.TextView[@index='1']")).click();
-
+                break;
+            case "Lấy hóa đơn thanh toán":
+                waitElement(By.xpath("//android.widget.TextView[@text='" +arg0 + "']"));
+                androidDriver.findElement(By.xpath("//android.widget.TextView[@text='" + arg0 + "']")).click();
                 break;
         }
     }
@@ -197,6 +199,7 @@ public class FlowerBookingStepdefs extends TestBase {
     public void iFillEmail(String arg0) throws Exception {
         // Write code here that turns the phrase above into concrete actions
         waitElement(By.xpath("//android.view.ViewGroup[@index='3']/android.view.ViewGroup[@index='0']/android.widget.TextView"));
+        Thread.sleep(1000);
         androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='3']/android.view.ViewGroup[@index='0']/android.widget.TextView")).click();
         androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='0']/android.view.ViewGroup[@index='3']/android.widget.EditText[@index='1']")).sendKeys(arg0);
         try {
@@ -258,5 +261,63 @@ public class FlowerBookingStepdefs extends TestBase {
         androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='0']/android.view.ViewGroup[@index='0']/android.widget.TextView")).click();
         waitElement(By.xpath("//android.widget.TextView[@text='Tiếp tục']"));
         androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Tiếp tục']")).click();
+    }
+
+    @And("^I navigate transaction results$")
+    public void iNavigateTransactionResults() throws Exception{
+        waitElement(By.xpath("//android.widget.TextView[@text='Tài khoản nguồn']"));
+        scrollToUp();
+    }
+
+
+    @Then("^I fill The \"([^\"]*)\" name company$")
+    public void iFillTheNameCompany(String arg0) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
+        waitElement(By.xpath("//android.widget.TextView[@text='Thông tin xuất hóa đơn']"));
+        androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.FrameLayout[@index='0']/android.widget.EditText[@index='0']")).sendKeys(arg0);
+    }
+
+    @And("^I fill \"([^\"]*)\" tax number$")
+    public void iFillTaxNumber(String arg0) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
+        androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='2']/android.widget.FrameLayout[@index='0']/android.widget.EditText[@index='0']")).sendKeys(arg0);
+    }
+
+    @Then("^I fill \"([^\"]*)\" billing address$")
+    public void iFillBillingAddress(String arg0) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
+        androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='3']/android.widget.FrameLayout[@index='0']/android.widget.EditText[@index='0']")).sendKeys(arg0);
+    }
+
+    @And("^I fill \"([^\"]*)\" billing email$")
+    public void iFillBillingEmail(String arg0) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
+        androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='5']/android.widget.FrameLayout[@index='0']/android.widget.EditText[@index='0']")).sendKeys(arg0);
+
+    }
+
+    @Then("^I submit$")
+    public void iSubmit() throws Exception{
+        androidDriver.findElement(By.xpath("//android.widget.Button[@text='Gửi thông tin']")).click();
+    }
+
+    @And("^I confirm billing$")
+    public void iConfirmBilling() throws Exception{
+        waitElement(By.xpath("//android.widget.Button[@text='Xác nhận']"));
+        androidDriver.findElement(By.xpath("//android.widget.Button[@text='Xác nhận']")).click();
+    }
+
+    @Then("^I navigate billing information$")
+    public void iNavigateBillingInformation() throws Exception{
+        waitElement(By.xpath("//android.widget.TextView[@text='Tài khoản nguồn']"));
+        scrollToUp();
+    }
+
+    @Then("^I verify content popup is displayed \"([^\"]*)\"$")
+    public void iVerifyContentPopupIsDisplayed(String arg0) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
+         waitElement(By.xpath("//android.widget.TextView[@text='Đồng ý']"));
+        String actualString2 = androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='0']/android.widget.TextView[@index='0']")).getText();
+        assertTrue(actualString2.contains(arg0));
     }
 }
