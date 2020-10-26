@@ -19,7 +19,7 @@ public class RunReport {
         jsonFiles.add("reports/cucumber.json");
 
         String buildNumber = "1";
-        String projectName = "KHCN_booking_flower-02";
+        String projectName = "mABHDBank";
         Configuration configuration = new Configuration(reportOutputDirectory, projectName);
         configuration.setBuildNumber(buildNumber);
 

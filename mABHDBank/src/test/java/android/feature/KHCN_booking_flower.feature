@@ -11,7 +11,7 @@ Feature: Flower Booking
     Then I click "Đặt mua hoa"
     And I choose a flower
     And I click "Tiếp tục"
-    And I fill email "datnt14@hdbank.com.vn"
+    And I fill email "abc@gmail.com"
     Then I fill receiver name "Nguyen Van A"
     And I fill phone number "0682365489"
     And I fill address "174 phan dang luu,p3,phu nhuan"
@@ -55,3 +55,12 @@ Feature: Flower Booking
     Then I submit
     And I confirm billing
     Then I verify content popup is displayed "Quý khách đã gửi yêu cầu lấy thông tin hóa đơn thành công."
+
+  @KHCN_booking_flower-03 @UninstallAndroid
+  Scenario: I check bill payment history
+    Given I open app
+    When I login with "lananh2009" and "abc123" without reset
+    Then I choose "Tài khoản"
+    And I click account detail
+    Then I click payment history page
+    Then I verify that transferredAmount is correct

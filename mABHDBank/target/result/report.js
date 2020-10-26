@@ -17,167 +17,142 @@ formatter.feature({
   ]
 });
 formatter.before({
-  "duration": 19623219000,
+  "duration": 21380773700,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 30,
-  "name": "I get bill payment successfully",
+  "line": 5,
+  "name": "I book a flower with login successfully",
   "description": "",
-  "id": "flower-booking;i-get-bill-payment-successfully",
+  "id": "flower-booking;i-book-a-flower-with-login-successfully",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 29,
-      "name": "@KHCN_booking_flower-02"
+      "line": 4,
+      "name": "@KHCN_booking_flower-01"
     },
     {
-      "line": 29,
+      "line": 4,
       "name": "@Android"
     }
   ]
 });
 formatter.step({
-  "line": 31,
+  "line": 6,
   "name": "I open app",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 32,
+  "line": 7,
   "name": "I login with \"lananh2009\" and \"abc123\"",
   "keyword": "When "
 });
 formatter.step({
-  "line": 33,
+  "line": 8,
   "name": "I input \"123456\" OTP code",
   "keyword": "And "
 });
 formatter.step({
-  "line": 34,
+  "line": 9,
   "name": "I do transaction with type is \"Đặt hoa\" in Home page 2",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 35,
+  "line": 10,
   "name": "I enable location",
   "keyword": "And "
 });
 formatter.step({
-  "line": 36,
+  "line": 11,
   "name": "I click \"Đặt mua hoa\"",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 37,
+  "line": 12,
   "name": "I choose a flower",
   "keyword": "And "
 });
 formatter.step({
-  "line": 38,
+  "line": 13,
   "name": "I click \"Tiếp tục\"",
   "keyword": "And "
 });
 formatter.step({
-  "line": 39,
+  "line": 14,
   "name": "I fill email \"abc@gmail.com\"",
   "keyword": "And "
 });
 formatter.step({
-  "line": 40,
+  "line": 15,
   "name": "I fill receiver name \"Nguyen Van A\"",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 41,
+  "line": 16,
   "name": "I fill phone number \"0682365489\"",
   "keyword": "And "
 });
 formatter.step({
-  "line": 42,
+  "line": 17,
   "name": "I fill address \"174 phan dang luu,p3,phu nhuan\"",
   "keyword": "And "
 });
 formatter.step({
-  "line": 43,
+  "line": 18,
   "name": "I fill booking date",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 44,
+  "line": 19,
   "name": "I confirm the above transaction",
   "keyword": "And "
 });
 formatter.step({
-  "line": 45,
-  "name": "I navigate billing information",
+  "line": 20,
+  "name": "I get amount total before doing transaction for booking flower",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "I scroll up",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 46,
+  "line": 22,
+  "name": "I get transferred amount",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
   "name": "I continue this booking",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 47,
+  "line": 24,
   "name": "I input \"123456\" OTP code",
   "keyword": "And "
 });
 formatter.step({
-  "line": 48,
+  "line": 25,
   "name": "I confirm again flower booking",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 49,
-  "name": "I navigate transaction results",
+  "line": 26,
+  "name": "I get amount total after doing transaction in booking flower",
   "keyword": "And "
 });
 formatter.step({
-  "line": 50,
-  "name": "I click \"Lấy hóa đơn thanh toán\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 51,
-  "name": "I fill The \"abc\" name company",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 52,
-  "name": "I fill \"435567234\" tax number",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 53,
-  "name": "I fill \"174 phan dang luu, p3, phu nhuan\" billing address",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 54,
-  "name": "I fill \"abc@gmail.com\" billing email",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 55,
-  "name": "I submit",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 56,
-  "name": "I confirm billing",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 57,
-  "name": "I verify content popup is displayed \"Quý khách đã gửi yêu cầu lấy thông tin hóa đơn thành công.\"",
+  "line": 27,
+  "name": "I verify before total amount \u003d after total amount + debit amount",
   "keyword": "Then "
 });
 formatter.match({
   "location": "StepdefsBase.iOpenApp()"
 });
 formatter.result({
-  "duration": 156709000,
+  "duration": 133734600,
   "status": "passed"
 });
 formatter.match({
@@ -194,7 +169,7 @@ formatter.match({
   "location": "FlowerBookingStepdefs.iLoginWithAnd(String,String)"
 });
 formatter.result({
-  "duration": 25346574700,
+  "duration": 9911664300,
   "status": "passed"
 });
 formatter.match({
@@ -207,7 +182,7 @@ formatter.match({
   "location": "FlowerBookingStepdefs.iInputOTPCode(String)"
 });
 formatter.result({
-  "duration": 7125156100,
+  "duration": 5045397400,
   "status": "passed"
 });
 formatter.match({
@@ -224,14 +199,14 @@ formatter.match({
   "location": "FlowerBookingStepdefs.iDoTransactionWithTypeIsInHomePage(String,int)"
 });
 formatter.result({
-  "duration": 12059523100,
+  "duration": 11865644300,
   "status": "passed"
 });
 formatter.match({
   "location": "FlowerBookingStepdefs.iEnableLocation()"
 });
 formatter.result({
-  "duration": 23100,
+  "duration": 2728088600,
   "status": "passed"
 });
 formatter.match({
@@ -244,14 +219,14 @@ formatter.match({
   "location": "FlowerBookingStepdefs.iClick(String)"
 });
 formatter.result({
-  "duration": 6102236500,
+  "duration": 2486623400,
   "status": "passed"
 });
 formatter.match({
   "location": "FlowerBookingStepdefs.iChooseAFlower()"
 });
 formatter.result({
-  "duration": 10044927000,
+  "duration": 7152296300,
   "status": "passed"
 });
 formatter.match({
@@ -264,7 +239,7 @@ formatter.match({
   "location": "FlowerBookingStepdefs.iClick(String)"
 });
 formatter.result({
-  "duration": 4219150400,
+  "duration": 3799521400,
   "status": "passed"
 });
 formatter.match({
@@ -277,7 +252,7 @@ formatter.match({
   "location": "FlowerBookingStepdefs.iFillEmail(String)"
 });
 formatter.result({
-  "duration": 8943023400,
+  "duration": 10350790400,
   "status": "passed"
 });
 formatter.match({
@@ -290,7 +265,7 @@ formatter.match({
   "location": "FlowerBookingStepdefs.iFillReceiverName(String)"
 });
 formatter.result({
-  "duration": 6607054100,
+  "duration": 8528020900,
   "status": "passed"
 });
 formatter.match({
@@ -303,7 +278,7 @@ formatter.match({
   "location": "FlowerBookingStepdefs.iFillPhoneNumber(String)"
 });
 formatter.result({
-  "duration": 5275747600,
+  "duration": 10453079600,
   "status": "passed"
 });
 formatter.match({
@@ -316,35 +291,49 @@ formatter.match({
   "location": "FlowerBookingStepdefs.iFillAddress(String)"
 });
 formatter.result({
-  "duration": 15613297500,
+  "duration": 16232664000,
   "status": "passed"
 });
 formatter.match({
   "location": "FlowerBookingStepdefs.iFillBookingDate()"
 });
 formatter.result({
-  "duration": 19754936500,
+  "duration": 18191513200,
   "status": "passed"
 });
 formatter.match({
   "location": "FlowerBookingStepdefs.iConfirmTheAboveTransaction()"
 });
 formatter.result({
-  "duration": 6755468300,
+  "duration": 5173883700,
   "status": "passed"
 });
 formatter.match({
-  "location": "FlowerBookingStepdefs.iNavigateBillingInformation()"
+  "location": "FlowerBookingStepdefs.iGetAmountTotalBeforeDoingTransactionForBookingFlower()"
 });
 formatter.result({
-  "duration": 3830134500,
+  "duration": 4283163200,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FlowerBookingStepdefs.iScrollUp()"
+});
+formatter.result({
+  "duration": 1168809400,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FlowerBookingStepdefs.iGetTransferredAmount()"
+});
+formatter.result({
+  "duration": 185982400,
   "status": "passed"
 });
 formatter.match({
   "location": "FlowerBookingStepdefs.iContinueThisBooking()"
 });
 formatter.result({
-  "duration": 186674300,
+  "duration": 284231200,
   "status": "passed"
 });
 formatter.match({
@@ -357,117 +346,146 @@ formatter.match({
   "location": "FlowerBookingStepdefs.iInputOTPCode(String)"
 });
 formatter.result({
-  "duration": 5775698300,
+  "duration": 5743585900,
   "status": "passed"
 });
 formatter.match({
   "location": "FlowerBookingStepdefs.iConfirmAgainFlowerBooking()"
 });
 formatter.result({
-  "duration": 3961852200,
+  "duration": 8199766800,
   "status": "passed"
 });
 formatter.match({
-  "location": "FlowerBookingStepdefs.iNavigateTransactionResults()"
+  "location": "FlowerBookingStepdefs.iGetAmountTotalAfterDoingTransactionInBookingFlower()"
 });
 formatter.result({
-  "duration": 7140735300,
+  "duration": 7522718200,
   "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "Lấy hóa đơn thanh toán",
-      "offset": 9
-    }
-  ],
-  "location": "FlowerBookingStepdefs.iClick(String)"
+  "location": "FlowerBookingStepdefs.iVerifyBeforeTotalAmountAfterTotalAmountDebitAmount()"
 });
 formatter.result({
-  "duration": 1616003600,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "abc",
-      "offset": 12
-    }
-  ],
-  "location": "FlowerBookingStepdefs.iFillTheNameCompany(String)"
-});
-formatter.result({
-  "duration": 2573370200,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "435567234",
-      "offset": 8
-    }
-  ],
-  "location": "FlowerBookingStepdefs.iFillTaxNumber(String)"
-});
-formatter.result({
-  "duration": 1233940100,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "174 phan dang luu, p3, phu nhuan",
-      "offset": 8
-    }
-  ],
-  "location": "FlowerBookingStepdefs.iFillBillingAddress(String)"
-});
-formatter.result({
-  "duration": 1291832800,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "abc@gmail.com",
-      "offset": 8
-    }
-  ],
-  "location": "FlowerBookingStepdefs.iFillBillingEmail(String)"
-});
-formatter.result({
-  "duration": 1348868600,
-  "status": "passed"
-});
-formatter.match({
-  "location": "FlowerBookingStepdefs.iSubmit()"
-});
-formatter.result({
-  "duration": 755139400,
-  "status": "passed"
-});
-formatter.match({
-  "location": "FlowerBookingStepdefs.iConfirmBilling()"
-});
-formatter.result({
-  "duration": 2067024900,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Quý khách đã gửi yêu cầu lấy thông tin hóa đơn thành công.",
-      "offset": 37
-    }
-  ],
-  "location": "FlowerBookingStepdefs.iVerifyContentPopupIsDisplayed(String)"
-});
-formatter.result({
-  "duration": 2055291800,
+  "duration": 2433200,
   "status": "passed"
 });
 formatter.after({
-  "duration": 971879200,
+  "duration": 1003667600,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 17892886600,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 60,
+  "name": "I check bill payment history",
+  "description": "",
+  "id": "flower-booking;i-check-bill-payment-history",
+  "type": "scenario",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "line": 59,
+      "name": "@KHCN_booking_flower-03"
+    },
+    {
+      "line": 59,
+      "name": "@UninstallAndroid"
+    }
+  ]
+});
+formatter.step({
+  "line": 61,
+  "name": "I open app",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 62,
+  "name": "I login with \"lananh2009\" and \"abc123\" without reset",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 63,
+  "name": "I choose \"Tài khoản\"",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 64,
+  "name": "I click account detail",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 65,
+  "name": "I click payment history page",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 66,
+  "name": "I verify that transferredAmount is correct",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepdefsBase.iOpenApp()"
+});
+formatter.result({
+  "duration": 53600,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "lananh2009",
+      "offset": 14
+    },
+    {
+      "val": "abc123",
+      "offset": 31
+    }
+  ],
+  "location": "FlowerBookingStepdefs.iLoginWithAndWithoutReset(String,String)"
+});
+formatter.result({
+  "duration": 7413655500,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Tài khoản",
+      "offset": 10
+    }
+  ],
+  "location": "FlowerBookingStepdefs.iChoose(String)"
+});
+formatter.result({
+  "duration": 6317024200,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FlowerBookingStepdefs.iClickAccountDetail()"
+});
+formatter.result({
+  "duration": 2218147800,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FlowerBookingStepdefs.iClickPaymentHistoryPage()"
+});
+formatter.result({
+  "duration": 3473845700,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FlowerBookingStepdefs.iVerifyThatTransferredAmountIsCorrect()"
+});
+formatter.result({
+  "duration": 2629365200,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 996340000,
   "status": "passed"
 });
 });

@@ -20,7 +20,7 @@ import static org.testng.Assert.assertTrue;
 public class FlowerBookingStepdefs extends TestBase {
     private double d_beforeAmount = 0;
     private double d_afterAmount = 0;
-    private double d_transferredAmount = 0;
+    static double d_transferredAmount = 0;
 
     @When("^I login with \"([^\"]*)\" and \"([^\"]*)\"$")
     public void iLoginWithAnd(String arg0, String arg1) throws Exception {
@@ -32,14 +32,6 @@ public class FlowerBookingStepdefs extends TestBase {
             androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']")).click();
 
         }catch (Exception e){
-        }
-        try {
-            if (androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='8']/android.widget.RelativeLayout[@index='0']/android.widget.ImageView[@index='2']")).isDisplayed()) {
-                // Tap on icon x in text box user name
-                androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='8']/android.widget.RelativeLayout[@index='0']/android.widget.ImageView[@index='2']")).click();
-            }
-        } catch (Exception e) {
-            e.getMessage();
         }
         androidDriver.findElement(By.xpath("//android.widget.EditText[@text='Tài khoản']")).clear();
         androidDriver.findElement(By.xpath("//android.widget.EditText[@text='Tài khoản']")).sendKeys(arg0);
@@ -155,7 +147,7 @@ public class FlowerBookingStepdefs extends TestBase {
     }
     private double getTransferredAmount() throws Exception {
         List<AndroidElement> transferredAmountList = (List<AndroidElement>) androidDriver.findElements(By.xpath("//android.widget.TextView[contains(@text,'VND')]"));
-        String transferredAmount = transferredAmountList.get(2).getText();
+        String transferredAmount = transferredAmountList.get(1).getText();
         transferredAmount = transferredAmount.replace(" VND", "");
         transferredAmount = transferredAmount.replace(",", "");
         System.out.println("**************** Transferred Amount   " + transferredAmount);
@@ -316,8 +308,58 @@ public class FlowerBookingStepdefs extends TestBase {
     @Then("^I verify content popup is displayed \"([^\"]*)\"$")
     public void iVerifyContentPopupIsDisplayed(String arg0) throws Exception {
         // Write code here that turns the phrase above into concrete actions
-         waitElement(By.xpath("//android.widget.TextView[@text='Đồng ý']"));
+        waitElement(By.xpath("//android.widget.TextView[@text='Đồng ý']"));
         String actualString2 = androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='0']/android.widget.TextView[@index='0']")).getText();
         assertTrue(actualString2.contains(arg0));
     }
+
+    @Then("^I choose \"([^\"]*)\"$")
+    public void iChoose(String arg0) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
+        waitElement(By.xpath("//android.widget.TextView[@text='" +arg0 + "']"));
+        androidDriver.findElement(By.xpath("//android.widget.TextView[@text='" +arg0 + "']")).click();
+    }
+
+    @And("^I click account detail$")
+    public void iClickAccountDetail() throws Exception{
+        waitElement(By.xpath("//android.widget.FrameLayout[@index='1']/android.widget.ImageView[@index='1']"));
+        androidDriver.findElement(By.xpath("//android.widget.FrameLayout[@index='1']/android.widget.LinearLayout[@index='0']/android.widget.TextView[@index='0']")).click();
+    }
+
+    @Then("^I click payment history page$")
+    public void iClickPaymentHistoryPage() throws Exception{
+        waitElement(By.xpath("//android.widget.TextView[@text='Lịch sử GD']"));
+        androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Lịch sử GD']")).click();
+    }
+
+    @When("^I login with \"([^\"]*)\" and \"([^\"]*)\" without reset$")
+    public void iLoginWithAndWithoutReset(String arg0, String arg1) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            if (androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='8']/android.widget.RelativeLayout[@index='0']/android.widget.ImageView[@index='2']")).isDisplayed()) {
+                // Tap on icon x in text box user name
+                androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='8']/android.widget.RelativeLayout[@index='0']/android.widget.ImageView[@index='2']")).click();
+            }
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        androidDriver.findElement(By.xpath("//android.widget.EditText[@text='Tài khoản']")).clear();
+        androidDriver.findElement(By.xpath("//android.widget.EditText[@text='Tài khoản']")).sendKeys(arg0);
+        androidDriver.findElement(By.xpath("//android.widget.EditText[@text='Mật khẩu']")).clear();
+        androidDriver.findElement(By.xpath("//android.widget.EditText[@text='Mật khẩu']")).sendKeys(arg1);
+        androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Đăng nhập']")).click();
+    }
+
+    @Then("^I verify that transferredAmount is correct$")
+    public void iVerifyThatTransferredAmountIsCorrect() throws Exception{
+        String ammount = androidDriver.findElement(By.xpath("//androidx.recyclerview.widget.RecyclerView[@index='3']/android.widget.LinearLayout[@index='0']/android.widget.TextView[@index='1']")).getText();
+        ammount = ammount.replace(" VND", "");
+        ammount = ammount.replace(",", "");
+        ammount = ammount.replace("-", "");
+        System.out.println("**************** Amount   " + ammount);
+        System.out.println("**************** Transferred Amount   " + d_transferredAmount);
+        Double a = Double.parseDouble(ammount);
+        assertEquals(a,  d_transferredAmount);
+    }
+
 }
