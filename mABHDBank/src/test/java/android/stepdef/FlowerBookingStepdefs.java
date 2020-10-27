@@ -24,7 +24,6 @@ public class FlowerBookingStepdefs extends TestBase {
 
     @When("^I login with \"([^\"]*)\" and \"([^\"]*)\"$")
     public void iLoginWithAnd(String arg0, String arg1) throws Exception {
-        // Write code here that turns the phrase above into concrete actions
         try{
             waitElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']"));
             androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']")).click();
@@ -42,7 +41,6 @@ public class FlowerBookingStepdefs extends TestBase {
 
     @Then("^I input \"([^\"]*)\" OTP code$")
     public void iInputOTPCode(String arg0) throws Exception {
-        // Write code here that turns the phrase above into concrete actions
         waitElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.TextView[@index='2']"));
         androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.TextView[@index='2']")).sendKeys(arg0);
     }
@@ -70,7 +68,6 @@ public class FlowerBookingStepdefs extends TestBase {
 
     @And("^I click \"([^\"]*)\"$")
     public void iClick(String arg0) throws Exception {
-        // Write code here that turns the phrase above into concrete actions
 
         switch (arg0){
             case "Đặt mua hoa":
@@ -315,7 +312,6 @@ public class FlowerBookingStepdefs extends TestBase {
 
     @Then("^I choose \"([^\"]*)\"$")
     public void iChoose(String arg0) throws Exception {
-        // Write code here that turns the phrase above into concrete actions
         waitElement(By.xpath("//android.widget.TextView[@text='" +arg0 + "']"));
         androidDriver.findElement(By.xpath("//android.widget.TextView[@text='" +arg0 + "']")).click();
     }
@@ -334,7 +330,6 @@ public class FlowerBookingStepdefs extends TestBase {
 
     @When("^I login with \"([^\"]*)\" and \"([^\"]*)\" without reset$")
     public void iLoginWithAndWithoutReset(String arg0, String arg1) throws Exception {
-        // Write code here that turns the phrase above into concrete actions
         try {
             if (androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='8']/android.widget.RelativeLayout[@index='0']/android.widget.ImageView[@index='2']")).isDisplayed()) {
                 // Tap on icon x in text box user name
