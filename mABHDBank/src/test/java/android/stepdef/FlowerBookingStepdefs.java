@@ -14,9 +14,6 @@ import org.openqa.selenium.Point;
 import java.awt.*;
 import java.util.List;
 
-import static android.stepdef.StepdefsBase.d_transferredAmount;
-import static android.stepdef.StepdefsBase.d_afterAmount;
-import static android.stepdef.StepdefsBase.d_beforeAmount;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -24,22 +21,14 @@ public class FlowerBookingStepdefs extends TestBase {
 
     @When("^I login with \"([^\"]*)\" and \"([^\"]*)\"$")
     public void iLoginWithAnd(String arg0, String arg1) throws Exception {
-//        try{
-//            waitElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']"));
-//            androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']")).click();
-//            waitElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']"));
-//            androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']")).click();
-//
-//        }catch (Exception e){
-//        }
+        // Write code here that turns the phrase above into concrete actions
+        try{
+            waitElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']"));
+            androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']")).click();
+            waitElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']"));
+            androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.Button[@index='0']")).click();
 
-        try {
-            if (androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='8']/android.widget.RelativeLayout[@index='0']/android.widget.ImageView[@index='2']")).isDisplayed()) {
-                // Tap on icon x in text box user name
-                androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='8']/android.widget.RelativeLayout[@index='0']/android.widget.ImageView[@index='2']")).click();
-            }
-        } catch (Exception e) {
-            e.getMessage();
+        }catch (Exception e){
         }
         androidDriver.findElement(By.xpath("//android.widget.EditText[@text='Tài khoản']")).clear();
         androidDriver.findElement(By.xpath("//android.widget.EditText[@text='Tài khoản']")).sendKeys(arg0);
@@ -50,6 +39,7 @@ public class FlowerBookingStepdefs extends TestBase {
 
     @Then("^I input \"([^\"]*)\" OTP code$")
     public void iInputOTPCode(String arg0) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
         waitElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.TextView[@index='2']"));
         androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.TextView[@index='2']")).sendKeys(arg0);
     }
@@ -57,11 +47,10 @@ public class FlowerBookingStepdefs extends TestBase {
     @And("^I do transaction with type is \"([^\"]*)\" in Home page (\\d+)$")
     public void iDoTransactionWithTypeIsInHomePage(String arg0, int arg1) throws Exception {
         // Write code here that turns the phrase above into concrete actions
-//        waitElement(By.xpath("//android.widget.LinearLayout[@index='0']/android.widget.ImageView[@index='1']"));
-//        androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='0']/android.widget.ImageView[@index='1']")).click();
+        waitElement(By.xpath("//android.widget.LinearLayout[@index='0']/android.widget.ImageView[@index='1']"));
+        androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='0']/android.widget.ImageView[@index='1']")).click();
         waitElement(By.xpath("//android.widget.TextView[@text='Tài khoản']"));
         swipeToLeft();
-        waitElement(By.xpath("//android.widget.TextView[@text='" + arg0 + "']"));
         androidDriver.findElement(By.xpath("//android.widget.TextView[@text='" +arg0 + "']")).click();
     }
 
@@ -77,6 +66,7 @@ public class FlowerBookingStepdefs extends TestBase {
 
     @And("^I click \"([^\"]*)\"$")
     public void iClick(String arg0) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
 
         switch (arg0){
             case "Đặt mua hoa":
@@ -132,6 +122,19 @@ public class FlowerBookingStepdefs extends TestBase {
     @Then("^I continue this booking$")
     public void iContinueThisBooking() throws Exception {
         androidDriver.findElement(By.xpath("//android.widget.Button[@text='Tiếp tục']")).click();
+    }
+
+    @Then("^I confirm this booking$")
+    public void iConfirmThisBooking() throws Exception{
+        try {
+            if (androidDriver.isKeyboardShown()) {
+                androidDriver.hideKeyboard();
+            }
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        waitElement(By.xpath("//android.widget.Button[@text='Xác nhận']"));
+        androidDriver.findElement(By.xpath("//android.widget.Button[@text='Xác nhận']")).click();
     }
 
     @And("^I get transferred amount$")
@@ -244,7 +247,7 @@ public class FlowerBookingStepdefs extends TestBase {
         androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='11']/android.widget.TextView[@index='0']")).click();
         waitElement(By.xpath("//android.view.ViewGroup[@index='1']/android.view.ViewGroup[@index='0']/android.widget.TextView[@index='2']"));
         androidDriver.findElement(By.xpath("//android.view.ViewGroup[@index='0']/android.view.ViewGroup[@index='0']/android.widget.TextView")).click();
-        waitElement(By.xpath("//android.widget.TextView[@text='Tiếp tục']"));
+//        waitElement(By.xpath("//android.widget.TextView[@text='Tiếp tục']"));
         androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Tiếp tục']")).click();
     }
 
@@ -278,7 +281,6 @@ public class FlowerBookingStepdefs extends TestBase {
     public void iFillBillingEmail(String arg0) throws Exception {
         // Write code here that turns the phrase above into concrete actions
         androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='5']/android.widget.FrameLayout[@index='0']/android.widget.EditText[@index='0']")).sendKeys(arg0);
-
     }
 
     @Then("^I submit$")
@@ -308,6 +310,7 @@ public class FlowerBookingStepdefs extends TestBase {
 
     @Then("^I choose \"([^\"]*)\"$")
     public void iChoose(String arg0) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
         waitElement(By.xpath("//android.widget.TextView[@text='" +arg0 + "']"));
         androidDriver.findElement(By.xpath("//android.widget.TextView[@text='" +arg0 + "']")).click();
     }
@@ -326,6 +329,7 @@ public class FlowerBookingStepdefs extends TestBase {
 
     @When("^I login with \"([^\"]*)\" and \"([^\"]*)\" without reset$")
     public void iLoginWithAndWithoutReset(String arg0, String arg1) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
         try {
             if (androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='8']/android.widget.RelativeLayout[@index='0']/android.widget.ImageView[@index='2']")).isDisplayed()) {
                 // Tap on icon x in text box user name
@@ -353,15 +357,4 @@ public class FlowerBookingStepdefs extends TestBase {
         assertEquals(a,  d_transferredAmount);
     }
 
-    @Then("^I confirm the booking$")
-    public void iConfirmTheBooking() throws Exception{
-        try {
-            if (androidDriver.isKeyboardShown()) {
-                androidDriver.hideKeyboard();
-            }
-        } catch (Exception e) {
-            e.getMessage();
-        }
-        androidDriver.findElement(By.xpath("//android.widget.Button[@text='Xác nhận']")).click();
-    }
 }

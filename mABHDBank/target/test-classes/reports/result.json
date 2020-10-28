@@ -6,26 +6,26 @@
         "before": [
           {
             "result": {
-              "duration": 18591867300,
+              "duration": 21167793700,
               "status": "passed"
             },
             "match": {
-              "location": "Hooks.setUpUninstallAndroid()"
+              "location": "Hooks.setUpAndroid()"
             }
           }
         ],
         "line": 5,
-        "name": "I book an one way train",
+        "name": "I book a flower with login successfully",
         "description": "",
-        "id": "train-ticket-booking;i-book-an-one-way-train",
+        "id": "flower-booking;i-book-a-flower-with-login-successfully",
         "after": [
           {
             "result": {
-              "duration": 883513400,
+              "duration": 1076079300,
               "status": "passed"
             },
             "match": {
-              "location": "Hooks.tearDownUninstallAndroid(Scenario)"
+              "location": "Hooks.tearDownAndroid(Scenario)"
             }
           }
         ],
@@ -34,7 +34,7 @@
         "steps": [
           {
             "result": {
-              "duration": 102036000,
+              "duration": 158633700,
               "status": "passed"
             },
             "line": 6,
@@ -46,7 +46,7 @@
           },
           {
             "result": {
-              "duration": 6643297500,
+              "duration": 10210934000,
               "status": "passed"
             },
             "line": 7,
@@ -64,284 +64,14 @@
               ],
               "location": "FlowerBookingStepdefs.iLoginWithAnd(String,String)"
             },
-            "keyword": "Then "
+            "keyword": "When "
           },
           {
             "result": {
-              "duration": 7247738000,
+              "duration": 4871879900,
               "status": "passed"
             },
-            "comments": [
-              {
-                "line": 8,
-                "value": "#    And I input \"123456\" OTP code"
-              }
-            ],
-            "line": 9,
-            "name": "I do transaction with type is \"Đặt vé tàu\" in Home page 2",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Đặt vé tàu",
-                  "offset": 31
-                },
-                {
-                  "val": "2",
-                  "offset": 56
-                }
-              ],
-              "location": "FlowerBookingStepdefs.iDoTransactionWithTypeIsInHomePage(String,int)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 22168166000,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "I book an one way train from \"Hà Nội\" to \"Sài Gòn\" with seat type is \"Giường nằm (khoang 6 chỗ)\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "one way",
-                  "offset": 10
-                },
-                {
-                  "val": "Hà Nội",
-                  "offset": 30
-                },
-                {
-                  "val": "Sài Gòn",
-                  "offset": 42
-                },
-                {
-                  "val": "Giường nằm (khoang 6 chỗ)",
-                  "offset": 70
-                }
-              ],
-              "location": "TrainBookingStepdefs.iBookAnOneWayTrainFromToWithSeatTypeIs(String,String,String,String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 14138171100,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "I choose departing and return time for one way train",
-            "match": {
-              "arguments": [
-                {
-                  "val": "one way",
-                  "offset": 39
-                }
-              ],
-              "location": "TrainBookingStepdefs.iChooseDepartingAndReturnTimeForOneWayTrain(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 3664149700,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "I fill passenger info as below",
-            "match": {
-              "location": "TrainBookingStepdefs.iFillPassengerInfoAsBelow(DataTable)"
-            },
-            "rows": [
-              {
-                "cells": [
-                  "Nguyen Van A",
-                  "356116742"
-                ],
-                "line": 13
-              }
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1137705400,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "I scroll up page",
-            "match": {
-              "location": "TrainBookingStepdefs.iScrollUpPage()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1878700100,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "I fill contact info as below",
-            "match": {
-              "location": "TrainBookingStepdefs.iFillContactInfoAsBelow(DataTable)"
-            },
-            "rows": [
-              {
-                "cells": [
-                  "234549958",
-                  "abc@gmail.com"
-                ],
-                "line": 16
-              }
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 3195070800,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "I choose \"Không xuất hóa đơn\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Không xuất hóa đơn",
-                  "offset": 10
-                }
-              ],
-              "location": "FlowerBookingStepdefs.iChoose(String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 8959973100,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "I continue to book train",
-            "match": {
-              "location": "TrainBookingStepdefs.iContinueToBookTrain()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 276015100,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "I get amount total before doing transaction in train booking",
-            "match": {
-              "arguments": [
-                {
-                  "val": "train",
-                  "offset": 47
-                }
-              ],
-              "location": "TrainBookingStepdefs.iGetAmountTotalBeforeDoingTransactionInHotelBooking(String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1255696400,
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "I get transferred amount when booking train ticket",
-            "match": {
-              "arguments": [
-                {
-                  "val": "when booking train ticket",
-                  "offset": 25
-                }
-              ],
-              "location": "TrainBookingStepdefs.iGetTransferredAmountInPaymentService(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1162185400,
-              "status": "passed"
-            },
-            "line": 21,
-            "name": "I scroll up page",
-            "match": {
-              "location": "TrainBookingStepdefs.iScrollUpPage()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 258839000,
-              "status": "passed"
-            },
-            "line": 22,
-            "name": "I continue to book the train",
-            "match": {
-              "arguments": [
-                {
-                  "val": "the train",
-                  "offset": 19
-                }
-              ],
-              "location": "TrainBookingStepdefs.iContinueToBookHotel(String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 5388957800,
-              "status": "passed"
-            },
-            "line": 23,
-            "name": "I verify \"Nhà cung cấp\" \"Đường sắt Việt Nam\" is displayed after doing transaction successfully",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Nhà cung cấp",
-                  "offset": 10
-                },
-                {
-                  "val": "Đường sắt Việt Nam",
-                  "offset": 25
-                }
-              ],
-              "location": "TrainBookingStepdefs.iVerifyIsDisplayedAfterDoingTransactionSuccessfully(String,String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1417125900,
-              "status": "passed"
-            },
-            "line": 24,
-            "name": "I verify \"Dịch vụ\" \"Đặt mua vé tàu\" is displayed after doing transaction successfully",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Dịch vụ",
-                  "offset": 10
-                },
-                {
-                  "val": "Đặt mua vé tàu",
-                  "offset": 20
-                }
-              ],
-              "location": "TrainBookingStepdefs.iVerifyIsDisplayedAfterDoingTransactionSuccessfully(String,String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1319730900,
-              "status": "passed"
-            },
-            "line": 25,
+            "line": 8,
             "name": "I input \"123456\" OTP code",
             "match": {
               "arguments": [
@@ -352,44 +82,282 @@
               ],
               "location": "FlowerBookingStepdefs.iInputOTPCode(String)"
             },
-            "keyword": "Then "
+            "keyword": "And "
           },
           {
             "result": {
-              "duration": 6570927600,
+              "duration": 9942221900,
               "status": "passed"
             },
-            "line": 26,
-            "name": "I confirm the booking",
-            "match": {
-              "location": "FlowerBookingStepdefs.iConfirmTheBooking()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 17603564600,
-              "status": "passed"
-            },
-            "line": 27,
-            "name": "I get amount total after doing transaction in train ticket booking",
+            "line": 9,
+            "name": "I do transaction with type is \"Đặt hoa\" in Home page 2",
             "match": {
               "arguments": [
                 {
-                  "val": "train ticket",
-                  "offset": 46
+                  "val": "Đặt hoa",
+                  "offset": 31
+                },
+                {
+                  "val": "2",
+                  "offset": 53
                 }
               ],
-              "location": "TrainBookingStepdefs.iGetAmountTotalAfterDoingTransactionInHotelBooking(String)"
+              "location": "FlowerBookingStepdefs.iDoTransactionWithTypeIsInHomePage(String,int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2772682400,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I enable location",
+            "match": {
+              "location": "FlowerBookingStepdefs.iEnableLocation()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 88200,
+              "duration": 2316350700,
               "status": "passed"
             },
-            "line": 28,
+            "line": 11,
+            "name": "I click \"Đặt mua hoa\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Đặt mua hoa",
+                  "offset": 9
+                }
+              ],
+              "location": "FlowerBookingStepdefs.iClick(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 6476381900,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I choose a flower",
+            "match": {
+              "location": "FlowerBookingStepdefs.iChooseAFlower()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3421565200,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I click \"Tiếp tục\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Tiếp tục",
+                  "offset": 9
+                }
+              ],
+              "location": "FlowerBookingStepdefs.iClick(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9908110700,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I fill email \"abc@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "abc@gmail.com",
+                  "offset": 14
+                }
+              ],
+              "location": "FlowerBookingStepdefs.iFillEmail(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8535526700,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I fill receiver name \"Nguyen Van A\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Nguyen Van A",
+                  "offset": 22
+                }
+              ],
+              "location": "FlowerBookingStepdefs.iFillReceiverName(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10141685900,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I fill phone number \"0682365489\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0682365489",
+                  "offset": 21
+                }
+              ],
+              "location": "FlowerBookingStepdefs.iFillPhoneNumber(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 13684328900,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I fill address \"174 phan dang luu,p3,phu nhuan\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "174 phan dang luu,p3,phu nhuan",
+                  "offset": 16
+                }
+              ],
+              "location": "FlowerBookingStepdefs.iFillAddress(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 16937311900,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I fill booking date",
+            "match": {
+              "location": "FlowerBookingStepdefs.iFillBookingDate()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5515797200,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "I confirm the above transaction",
+            "match": {
+              "location": "FlowerBookingStepdefs.iConfirmTheAboveTransaction()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4523549900,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "I get amount total before doing transaction for booking flower",
+            "match": {
+              "location": "FlowerBookingStepdefs.iGetAmountTotalBeforeDoingTransactionForBookingFlower()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1206375800,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "I scroll up",
+            "match": {
+              "location": "FlowerBookingStepdefs.iScrollUp()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 173232600,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "I get transferred amount",
+            "match": {
+              "location": "FlowerBookingStepdefs.iGetTransferredAmount()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 208653000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "I continue this booking",
+            "match": {
+              "location": "FlowerBookingStepdefs.iContinueThisBooking()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 6385674100,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "I input \"123456\" OTP code",
+            "match": {
+              "arguments": [
+                {
+                  "val": "123456",
+                  "offset": 9
+                }
+              ],
+              "location": "FlowerBookingStepdefs.iInputOTPCode(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8423813200,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "I confirm this booking",
+            "match": {
+              "location": "FlowerBookingStepdefs.iConfirmThisBooking()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 6748913300,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "I get amount total after doing transaction in booking flower",
+            "match": {
+              "location": "FlowerBookingStepdefs.iGetAmountTotalAfterDoingTransactionInBookingFlower()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2550600,
+              "status": "passed"
+            },
+            "line": 27,
             "name": "I verify before total amount \u003d after total amount + debit amount",
             "match": {
               "location": "FlowerBookingStepdefs.iVerifyBeforeTotalAmountAfterTotalAmountDebitAmount()"
@@ -400,20 +368,20 @@
         "tags": [
           {
             "line": 4,
-            "name": "@KHCN_booking_train-01"
+            "name": "@KHCN_booking_flower-01"
           },
           {
             "line": 4,
-            "name": "@UninstallAndroid"
+            "name": "@Android"
           }
         ]
       }
     ],
-    "name": "Train ticket Booking",
+    "name": "Flower Booking",
     "description": "",
-    "id": "train-ticket-booking",
+    "id": "flower-booking",
     "keyword": "Feature",
-    "uri": "KHCN_booking_train.feature",
+    "uri": "KHCN_booking_flower.feature",
     "tags": [
       {
         "line": 1,
@@ -421,7 +389,7 @@
       },
       {
         "line": 1,
-        "name": "@KHCN_booking_train"
+        "name": "@KHCN_booking_flower"
       }
     ]
   }

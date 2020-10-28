@@ -11,17 +11,18 @@ import org.openqa.selenium.By;
 import java.util.Calendar;
 import java.util.List;
 import java.util.TimeZone;
-import static android.stepdef.StepdefsBase.d_transferredAmount;
-import static android.stepdef.StepdefsBase.d_afterAmount;
-import static android.stepdef.StepdefsBase.d_beforeAmount;
+
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class TrainBookingStepdefs extends TestBase {
 
+    String companyName,companyAddress,companyTax,companyPhoneNumber;
+
     @Then("^I book an (one way|round trip) train from \"([^\"]*)\" to \"([^\"]*)\" with seat type is \"([^\"]*)\"$")
     public void iBookAnOneWayTrainFromToWithSeatTypeIs(String type, String fromTrain, String toTrain, String seatType) throws Exception {
         Calendar now = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-        String s_day = String.valueOf(now.get(Calendar.DAY_OF_MONTH)+4);
+        String s_day = String.valueOf(now.get(Calendar.DAY_OF_MONTH)+3);
         String e_day = s_day;
         androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Ga khởi hành']")).click();
         androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.LinearLayout[@index='0']/android.widget.EditText[@index='0']")).click();
@@ -61,7 +62,7 @@ public class TrainBookingStepdefs extends TestBase {
                 androidDriver.findElement(By.xpath("//android.widget.Button[@text='TIẾP TỤC']")).click();
                 androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='3']/android.widget.LinearLayout[@index='0']/android.widget.LinearLayout/android.widget.LinearLayout")).click();
                 waitElement(By.xpath("//android.widget.LinearLayout[@index='0']/android.widget.LinearLayout[@index='0']/android.widget.FrameLayout[@index='0']/android.widget.ImageView"));
-                androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.LinearLayout[@index='0']/android.widget.FrameLayout[@index='1']/android.widget.ImageView")).click();
+                androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='1']/android.widget.LinearLayout[@index='2']/android.widget.FrameLayout[@index='0']/android.widget.ImageView")).click();
                 androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Chọn']")).click();
                 androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Xong']")).click();
                 androidDriver.findElement(By.xpath("//android.widget.Button[@text='TIẾP TỤC']")).click();
@@ -90,6 +91,7 @@ public class TrainBookingStepdefs extends TestBase {
     public void iFillContactInfoAsBelow(DataTable contactInfo) throws Exception {
         List<List<String>> data = contactInfo.raw();
         androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='2']/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[@text='Số CMND/CCCD/Hộ chiếu/GPLX']")).sendKeys(data.get(0).get(0));
+        androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='4']/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[@index='1']")).sendKeys(data.get(0).get(2));
         androidDriver.findElement(By.xpath("//android.widget.EditText[@text='Email']")).sendKeys(data.get(0).get(1));
     }
 
@@ -119,7 +121,6 @@ public class TrainBookingStepdefs extends TestBase {
         }
     }
 
-
     @Then("^I continue to book (hotel|the train|flower)$")
     public void iContinueToBookHotel(String type) throws Exception {
         switch (type) {
@@ -127,7 +128,6 @@ public class TrainBookingStepdefs extends TestBase {
                 androidDriver.findElement(By.xpath("//android.widget.Button[@text='Tiếp tục']")).click();
         }
     }
-
 
     @And("^I verify \"([^\"]*)\" \"([^\"]*)\" is displayed after doing transaction successfully$")
     public void iVerifyIsDisplayedAfterDoingTransactionSuccessfully(String text1, String text2) throws Exception {
@@ -158,25 +158,29 @@ public class TrainBookingStepdefs extends TestBase {
     @Then("^I fill \"([^\"]*)\" company name$")
     public void iFillCompanyName(String arg0) throws Exception {
         // Write code here that turns the phrase above into concrete actions
+        companyName = arg0;
         androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='1']//android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[@index='0']")).sendKeys(arg0);
     }
 
     @And("^I fill \"([^\"]*)\" company tax number$")
     public void iFillCompanyTaxNumber(String arg0) throws Exception {
         // Write code here that turns the phrase above into concrete actions
-        androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='3']//android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[@index='0']")).sendKeys(arg0);
+        companyTax = arg0;
+        androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='3']/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[@index='0']")).sendKeys(arg0);
     }
 
     @And("^I fill \"([^\"]*)\" company address$")
     public void iFillCompanyAddress(String arg0) throws Exception {
         // Write code here that turns the phrase above into concrete actions
-        androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='5']//android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[@index='0']")).sendKeys(arg0);
+        companyAddress = arg0;
+        androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='5']/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[@index='0']")).sendKeys(arg0);
     }
 
     @Then("^I fill \"([^\"]*)\" company phone number$")
     public void iFillCompanyPhoneNumber(String arg0) throws Exception {
         // Write code here that turns the phrase above into concrete actions
-        androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='7']//android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[@index='0']")).sendKeys(arg0);
+        companyPhoneNumber = arg0;
+        androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='7']/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[@index='0']")).sendKeys(arg0);
     }
 
     @And("^I click \"([^\"]*)\" to book train$")
@@ -185,14 +189,87 @@ public class TrainBookingStepdefs extends TestBase {
         androidDriver.findElement(By.xpath("//android.widget.Button[@index='4']")).click();
         waitElement(By.xpath("//android.widget.TextView[@text='Thông báo']"));
         androidDriver.findElement(By.xpath("//android.widget.Button[@text='" + arg0 + "']")).click();
-        if(arg0.equals("Có")){
-            androidDriver.findElement(By.xpath("//android.widget.Button[@index='4']")).click();
-            waitElement(By.xpath("//android.widget.TextView[@text='Thông báo']"));
-            androidDriver.findElement(By.xpath("//android.widget.Button[@text='" + arg0 + "']")).click();
-        }
         androidDriver.findElement(By.xpath("//android.widget.Button[@text='THANH TOÁN']")).click();
         waitElement(By.xpath("//android.widget.TextView[@text='Thông báo']"));
         androidDriver.findElement(By.xpath("//android.widget.Button[@text='Không']")).click();
         Thread.sleep(2000);
+    }
+
+    @Then("^I confirm invoice and get invoice information$")
+    public void iConfirmInvoiceAndGetInvoiceInformation() throws Exception{
+        androidDriver.findElement(By.xpath("//android.widget.Button[@index='4']")).click();
+        waitElement(By.xpath("//android.widget.TextView[@text='Thông báo']"));
+        androidDriver.findElement(By.xpath("//android.widget.Button[@text='Có']")).click();
+        System.out.println("Company Name "+companyName);
+        System.out.println("Company Tax "+companyTax);
+        System.out.println("Company Address "+companyAddress);
+        System.out.println("Company Phone Number "+companyPhoneNumber);
+
+        androidDriver.findElement(By.xpath("//android.widget.Button[@index='4']")).click();
+        waitElement(By.xpath("//android.widget.TextView[@text='Thông báo']"));
+        androidDriver.findElement(By.xpath("//android.widget.Button[@text='Có']")).click();
+    }
+
+    @Then("^I payment this train booking$")
+    public void iPaymentThisTrainBooking() throws Exception{
+        androidDriver.findElement(By.xpath("//android.widget.Button[@text='THANH TOÁN']")).click();
+    }
+
+    @And("^I choose another exchange$")
+    public void iChooseAnotherExchange() throws Exception{
+        waitElement(By.xpath("//android.widget.TextView[@text='Chia sẻ']"));
+        scrollToUp();
+        androidDriver.findElement(By.xpath("//android.widget.Button[@text='Giao dịch khác']")).click();
+    }
+
+    @Then("^I click booking history$")
+    public void iClickBookingHistory() throws Exception{
+        androidDriver.findElement(By.xpath("//android.widget.RelativeLayout[@index='0']/android.widget.LinearLayout[@index='1']/android.widget.TextView[@index='0']")).click();
+    }
+
+    @And("^I choose booked train$")
+    public void iChooseBookedTrain() throws Exception{
+        waitElement(By.xpath("//android.widget.TextView[@text='Lịch sử đặt vé']"));
+        androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='0']/android.widget.LinearLayout[@index='1']/android.widget.LinearLayout[@index='0']")).click();
+    }
+
+    @And("^I click invoice information$")
+    public void iClickInvoiceInformation() throws Exception{
+        waitElement(By.xpath("//android.widget.LinearLayout[@index='0']/android.widget.LinearLayout[@index='1']/android.widget.TextView[@index='1']"));
+        androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='0']/android.widget.LinearLayout[@index='1']/android.widget.TextView[@index='1']")).click();
+    }
+
+    @Then("^I verify invoice information is correct$")
+    public void iVerifyInvoiceInformationIsCorrect() throws Exception{
+        waitElement(By.xpath("//android.widget.TextView[@text='Thông tin vé']"));
+        String name = androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='3']/android.widget.TextView[@index='3']")).getText();
+        String tax = androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='3']/android.widget.TextView[@index='6']")).getText();
+        String address = androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='3']/android.widget.TextView[@index='9']")).getText();
+        String phone = androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='3']/android.widget.TextView[@index='12']")).getText();
+        System.out.println("Company Name "+name);
+        System.out.println("Company Tax "+tax);
+        System.out.println("Company Address "+address);
+        System.out.println("Company Phone Number "+phone);
+
+        List<AndroidElement> feeList = (List<AndroidElement>) androidDriver.findElements(By.xpath("//android.widget.TextView[contains(@text,'VND')]"));
+        String amount = feeList.get(1).getText();
+        amount = amount.replace(" VND", "");
+        amount = amount.replace(",", "");
+        System.out.println("**************** Amount   " + amount);
+        System.out.println("**************** Amount   " + d_transferredAmount);
+
+        assertEquals(Double.parseDouble(amount),  d_transferredAmount);
+        assertEquals(companyName, name);
+        assertEquals(companyTax, tax);
+        assertEquals(companyAddress, address);
+        assertEquals(companyPhoneNumber, phone);
+    }
+
+    @Then("^I choose \"([^\"]*)\" without reset$")
+    public void iChooseWithoutReset(String arg0) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
+        waitElement(By.xpath("//android.widget.TextView[@text='Tài khoản']"));
+        swipeToLeft();
+        androidDriver.findElement(By.xpath("//android.widget.TextView[@text='" +arg0 + "']")).click();
     }
 }

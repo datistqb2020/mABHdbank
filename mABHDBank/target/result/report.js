@@ -1,9 +1,9 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("KHCN_booking_train.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("KHCN_booking_flower.feature");
 formatter.feature({
   "line": 2,
-  "name": "Train ticket Booking",
+  "name": "Flower Booking",
   "description": "",
-  "id": "train-ticket-booking",
+  "id": "flower-booking",
   "keyword": "Feature",
   "tags": [
     {
@@ -12,29 +12,29 @@ formatter.feature({
     },
     {
       "line": 1,
-      "name": "@KHCN_booking_train"
+      "name": "@KHCN_booking_flower"
     }
   ]
 });
 formatter.before({
-  "duration": 18591867300,
+  "duration": 21167793700,
   "status": "passed"
 });
 formatter.scenario({
   "line": 5,
-  "name": "I book an one way train",
+  "name": "I book a flower with login successfully",
   "description": "",
-  "id": "train-ticket-booking;i-book-an-one-way-train",
+  "id": "flower-booking;i-book-a-flower-with-login-successfully",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
       "line": 4,
-      "name": "@KHCN_booking_train-01"
+      "name": "@KHCN_booking_flower-01"
     },
     {
       "line": 4,
-      "name": "@UninstallAndroid"
+      "name": "@Android"
     }
   ]
 });
@@ -46,119 +46,105 @@ formatter.step({
 formatter.step({
   "line": 7,
   "name": "I login with \"lananh2009\" and \"abc123\"",
-  "keyword": "Then "
+  "keyword": "When "
 });
 formatter.step({
-  "comments": [
-    {
-      "line": 8,
-      "value": "#    And I input \"123456\" OTP code"
-    }
-  ],
-  "line": 9,
-  "name": "I do transaction with type is \"Đặt vé tàu\" in Home page 2",
+  "line": 8,
+  "name": "I input \"123456\" OTP code",
   "keyword": "And "
+});
+formatter.step({
+  "line": 9,
+  "name": "I do transaction with type is \"Đặt hoa\" in Home page 2",
+  "keyword": "Then "
 });
 formatter.step({
   "line": 10,
-  "name": "I book an one way train from \"Hà Nội\" to \"Sài Gòn\" with seat type is \"Giường nằm (khoang 6 chỗ)\"",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 11,
-  "name": "I choose departing and return time for one way train",
+  "name": "I enable location",
   "keyword": "And "
 });
 formatter.step({
+  "line": 11,
+  "name": "I click \"Đặt mua hoa\"",
+  "keyword": "Then "
+});
+formatter.step({
   "line": 12,
-  "name": "I fill passenger info as below",
-  "rows": [
-    {
-      "cells": [
-        "Nguyen Van A",
-        "356116742"
-      ],
-      "line": 13
-    }
-  ],
+  "name": "I choose a flower",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "I click \"Tiếp tục\"",
   "keyword": "And "
 });
 formatter.step({
   "line": 14,
-  "name": "I scroll up page",
-  "keyword": "Then "
+  "name": "I fill email \"abc@gmail.com\"",
+  "keyword": "And "
 });
 formatter.step({
   "line": 15,
-  "name": "I fill contact info as below",
-  "rows": [
-    {
-      "cells": [
-        "234549958",
-        "abc@gmail.com"
-      ],
-      "line": 16
-    }
-  ],
+  "name": "I fill receiver name \"Nguyen Van A\"",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 16,
+  "name": "I fill phone number \"0682365489\"",
   "keyword": "And "
 });
 formatter.step({
   "line": 17,
-  "name": "I choose \"Không xuất hóa đơn\"",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 18,
-  "name": "I continue to book train",
+  "name": "I fill address \"174 phan dang luu,p3,phu nhuan\"",
   "keyword": "And "
 });
 formatter.step({
-  "line": 19,
-  "name": "I get amount total before doing transaction in train booking",
+  "line": 18,
+  "name": "I fill booking date",
   "keyword": "Then "
 });
 formatter.step({
+  "line": 19,
+  "name": "I confirm the above transaction",
+  "keyword": "And "
+});
+formatter.step({
   "line": 20,
-  "name": "I get transferred amount when booking train ticket",
+  "name": "I get amount total before doing transaction for booking flower",
   "keyword": "And "
 });
 formatter.step({
   "line": 21,
-  "name": "I scroll up page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "I continue to book the train",
+  "name": "I scroll up",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 23,
-  "name": "I verify \"Nhà cung cấp\" \"Đường sắt Việt Nam\" is displayed after doing transaction successfully",
+  "line": 22,
+  "name": "I get transferred amount",
   "keyword": "And "
 });
 formatter.step({
+  "line": 23,
+  "name": "I continue this booking",
+  "keyword": "Then "
+});
+formatter.step({
   "line": 24,
-  "name": "I verify \"Dịch vụ\" \"Đặt mua vé tàu\" is displayed after doing transaction successfully",
+  "name": "I input \"123456\" OTP code",
   "keyword": "And "
 });
 formatter.step({
   "line": 25,
-  "name": "I input \"123456\" OTP code",
+  "name": "I confirm this booking",
   "keyword": "Then "
 });
 formatter.step({
   "line": 26,
-  "name": "I confirm the booking",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 27,
-  "name": "I get amount total after doing transaction in train ticket booking",
+  "name": "I get amount total after doing transaction in booking flower",
   "keyword": "And "
 });
 formatter.step({
-  "line": 28,
+  "line": 27,
   "name": "I verify before total amount \u003d after total amount + debit amount",
   "keyword": "Then "
 });
@@ -166,7 +152,7 @@ formatter.match({
   "location": "StepdefsBase.iOpenApp()"
 });
 formatter.result({
-  "duration": 102036000,
+  "duration": 158633700,
   "status": "passed"
 });
 formatter.match({
@@ -183,183 +169,7 @@ formatter.match({
   "location": "FlowerBookingStepdefs.iLoginWithAnd(String,String)"
 });
 formatter.result({
-  "duration": 6643297500,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Đặt vé tàu",
-      "offset": 31
-    },
-    {
-      "val": "2",
-      "offset": 56
-    }
-  ],
-  "location": "FlowerBookingStepdefs.iDoTransactionWithTypeIsInHomePage(String,int)"
-});
-formatter.result({
-  "duration": 7247738000,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "one way",
-      "offset": 10
-    },
-    {
-      "val": "Hà Nội",
-      "offset": 30
-    },
-    {
-      "val": "Sài Gòn",
-      "offset": 42
-    },
-    {
-      "val": "Giường nằm (khoang 6 chỗ)",
-      "offset": 70
-    }
-  ],
-  "location": "TrainBookingStepdefs.iBookAnOneWayTrainFromToWithSeatTypeIs(String,String,String,String)"
-});
-formatter.result({
-  "duration": 22168166000,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "one way",
-      "offset": 39
-    }
-  ],
-  "location": "TrainBookingStepdefs.iChooseDepartingAndReturnTimeForOneWayTrain(String)"
-});
-formatter.result({
-  "duration": 14138171100,
-  "status": "passed"
-});
-formatter.match({
-  "location": "TrainBookingStepdefs.iFillPassengerInfoAsBelow(DataTable)"
-});
-formatter.result({
-  "duration": 3664149700,
-  "status": "passed"
-});
-formatter.match({
-  "location": "TrainBookingStepdefs.iScrollUpPage()"
-});
-formatter.result({
-  "duration": 1137705400,
-  "status": "passed"
-});
-formatter.match({
-  "location": "TrainBookingStepdefs.iFillContactInfoAsBelow(DataTable)"
-});
-formatter.result({
-  "duration": 1878700100,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Không xuất hóa đơn",
-      "offset": 10
-    }
-  ],
-  "location": "FlowerBookingStepdefs.iChoose(String)"
-});
-formatter.result({
-  "duration": 3195070800,
-  "status": "passed"
-});
-formatter.match({
-  "location": "TrainBookingStepdefs.iContinueToBookTrain()"
-});
-formatter.result({
-  "duration": 8959973100,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "train",
-      "offset": 47
-    }
-  ],
-  "location": "TrainBookingStepdefs.iGetAmountTotalBeforeDoingTransactionInHotelBooking(String)"
-});
-formatter.result({
-  "duration": 276015100,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "when booking train ticket",
-      "offset": 25
-    }
-  ],
-  "location": "TrainBookingStepdefs.iGetTransferredAmountInPaymentService(String)"
-});
-formatter.result({
-  "duration": 1255696400,
-  "status": "passed"
-});
-formatter.match({
-  "location": "TrainBookingStepdefs.iScrollUpPage()"
-});
-formatter.result({
-  "duration": 1162185400,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "the train",
-      "offset": 19
-    }
-  ],
-  "location": "TrainBookingStepdefs.iContinueToBookHotel(String)"
-});
-formatter.result({
-  "duration": 258839000,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Nhà cung cấp",
-      "offset": 10
-    },
-    {
-      "val": "Đường sắt Việt Nam",
-      "offset": 25
-    }
-  ],
-  "location": "TrainBookingStepdefs.iVerifyIsDisplayedAfterDoingTransactionSuccessfully(String,String)"
-});
-formatter.result({
-  "duration": 5388957800,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Dịch vụ",
-      "offset": 10
-    },
-    {
-      "val": "Đặt mua vé tàu",
-      "offset": 20
-    }
-  ],
-  "location": "TrainBookingStepdefs.iVerifyIsDisplayedAfterDoingTransactionSuccessfully(String,String)"
-});
-formatter.result({
-  "duration": 1417125900,
+  "duration": 10210934000,
   "status": "passed"
 });
 formatter.match({
@@ -372,38 +182,196 @@ formatter.match({
   "location": "FlowerBookingStepdefs.iInputOTPCode(String)"
 });
 formatter.result({
-  "duration": 1319730900,
-  "status": "passed"
-});
-formatter.match({
-  "location": "FlowerBookingStepdefs.iConfirmTheBooking()"
-});
-formatter.result({
-  "duration": 6570927600,
+  "duration": 4871879900,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "train ticket",
-      "offset": 46
+      "val": "Đặt hoa",
+      "offset": 31
+    },
+    {
+      "val": "2",
+      "offset": 53
     }
   ],
-  "location": "TrainBookingStepdefs.iGetAmountTotalAfterDoingTransactionInHotelBooking(String)"
+  "location": "FlowerBookingStepdefs.iDoTransactionWithTypeIsInHomePage(String,int)"
 });
 formatter.result({
-  "duration": 17603564600,
+  "duration": 9942221900,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FlowerBookingStepdefs.iEnableLocation()"
+});
+formatter.result({
+  "duration": 2772682400,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Đặt mua hoa",
+      "offset": 9
+    }
+  ],
+  "location": "FlowerBookingStepdefs.iClick(String)"
+});
+formatter.result({
+  "duration": 2316350700,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FlowerBookingStepdefs.iChooseAFlower()"
+});
+formatter.result({
+  "duration": 6476381900,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Tiếp tục",
+      "offset": 9
+    }
+  ],
+  "location": "FlowerBookingStepdefs.iClick(String)"
+});
+formatter.result({
+  "duration": 3421565200,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "abc@gmail.com",
+      "offset": 14
+    }
+  ],
+  "location": "FlowerBookingStepdefs.iFillEmail(String)"
+});
+formatter.result({
+  "duration": 9908110700,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Nguyen Van A",
+      "offset": 22
+    }
+  ],
+  "location": "FlowerBookingStepdefs.iFillReceiverName(String)"
+});
+formatter.result({
+  "duration": 8535526700,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "0682365489",
+      "offset": 21
+    }
+  ],
+  "location": "FlowerBookingStepdefs.iFillPhoneNumber(String)"
+});
+formatter.result({
+  "duration": 10141685900,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "174 phan dang luu,p3,phu nhuan",
+      "offset": 16
+    }
+  ],
+  "location": "FlowerBookingStepdefs.iFillAddress(String)"
+});
+formatter.result({
+  "duration": 13684328900,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FlowerBookingStepdefs.iFillBookingDate()"
+});
+formatter.result({
+  "duration": 16937311900,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FlowerBookingStepdefs.iConfirmTheAboveTransaction()"
+});
+formatter.result({
+  "duration": 5515797200,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FlowerBookingStepdefs.iGetAmountTotalBeforeDoingTransactionForBookingFlower()"
+});
+formatter.result({
+  "duration": 4523549900,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FlowerBookingStepdefs.iScrollUp()"
+});
+formatter.result({
+  "duration": 1206375800,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FlowerBookingStepdefs.iGetTransferredAmount()"
+});
+formatter.result({
+  "duration": 173232600,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FlowerBookingStepdefs.iContinueThisBooking()"
+});
+formatter.result({
+  "duration": 208653000,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "123456",
+      "offset": 9
+    }
+  ],
+  "location": "FlowerBookingStepdefs.iInputOTPCode(String)"
+});
+formatter.result({
+  "duration": 6385674100,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FlowerBookingStepdefs.iConfirmThisBooking()"
+});
+formatter.result({
+  "duration": 8423813200,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FlowerBookingStepdefs.iGetAmountTotalAfterDoingTransactionInBookingFlower()"
+});
+formatter.result({
+  "duration": 6748913300,
   "status": "passed"
 });
 formatter.match({
   "location": "FlowerBookingStepdefs.iVerifyBeforeTotalAmountAfterTotalAmountDebitAmount()"
 });
 formatter.result({
-  "duration": 88200,
+  "duration": 2550600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 883513400,
+  "duration": 1076079300,
   "status": "passed"
 });
 });

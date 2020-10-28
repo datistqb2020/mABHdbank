@@ -31,6 +31,10 @@ public class TestBase {
     protected static Properties prop;
     private File file = new File("config/test.properties");
 
+    public double d_beforeAmount = 0;
+    public double d_afterAmount = 0;
+    public static double d_transferredAmount = 0;
+
     public TestBase() {
         try {
             prop = new Properties();

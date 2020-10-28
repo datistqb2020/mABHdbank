@@ -22,12 +22,12 @@ Feature: Flower Booking
     And I get transferred amount
     Then I continue this booking
     And I input "123456" OTP code
-    Then I confirm the booking
+    Then I confirm this booking
     And I get amount total after doing transaction in booking flower
     Then I verify before total amount = after total amount + debit amount
 
   @KHCN_booking_flower-02 @Android
-  Scenario: I get invoice successfully
+  Scenario: I get bill payment successfully
     Given I open app
     When I login with "lananh2009" and "abc123"
     And I input "123456" OTP code
@@ -45,7 +45,7 @@ Feature: Flower Booking
     Then I navigate billing information
     Then I continue this booking
     And I input "123456" OTP code
-    Then I confirm the booking
+    Then I confirm this booking
     And I navigate transaction results
     And I click "Lấy hóa đơn thanh toán"
     Then I fill The "abc" name company
@@ -57,7 +57,7 @@ Feature: Flower Booking
     Then I verify content popup is displayed "Quý khách đã gửi yêu cầu lấy thông tin hóa đơn thành công."
 
   @KHCN_booking_flower-03 @UninstallAndroid
-  Scenario: I check trade history
+  Scenario: I check bill payment history
     Given I open app
     When I login with "lananh2009" and "abc123" without reset
     Then I choose "Tài khoản"
