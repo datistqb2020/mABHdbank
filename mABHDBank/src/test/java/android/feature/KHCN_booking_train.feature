@@ -30,7 +30,7 @@ Feature: Train ticket Booking
   @KHCN_booking_train-02 @UninstallAndroid
   Scenario: I get invoice successfully
     Given I open app
-    Then I login with "lananh2009" and "abc123" without reset
+    Then I login with "lananh2009" and "abc123" without new install
     And I do transaction with type is "Đặt vé tàu" in Home page 2
     Then I book an one way train from "Hà Nội" to "Sài Gòn" with seat type is "Giường nằm (khoang 6 chỗ)"
     And I choose departing and return time for one way train
@@ -61,8 +61,8 @@ Feature: Train ticket Booking
   @KHCN_booking_train-03 @UninstallAndroid
   Scenario: I check bill payment history
     Given I open app
-    When I login with "lananh2009" and "abc123" without reset
-    Then I choose "Tài khoản" without reset
+    When I login with "lananh2009" and "abc123" without new install
+    Then I choose "Tài khoản" without new install
     And I click account detail
     Then I click payment history page
     Then I verify that transferredAmount is correct

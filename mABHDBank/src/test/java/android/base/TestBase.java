@@ -71,7 +71,7 @@ public class TestBase {
         File appRelease = new File(System.getProperty("user.dir") + "\\drivers\\" + fileName);
         DesiredCapabilities cap = new DesiredCapabilities();
 //        cap.setCapability("app", appRelease.getAbsolutePath());
-        cap.setCapability("app", "D:\\DatHdbank\\documents\\UAT\\mABHDBank\\drivers\\app-release.apk");
+        cap.setCapability("app", "D:\\DatHdbank\\UAT\\mABHDBank\\drivers\\app-release.apk");
         cap.setCapability("platformName", "android");
         cap.setCapability("deviceName", "418b9b02");
         cap.setCapability("appPackage", "com.vnpay.hdbank");
@@ -92,7 +92,7 @@ public class TestBase {
         File appRelease = new File(System.getProperty("user.dir") + "\\drivers\\" + fileName);
         DesiredCapabilities cap = new DesiredCapabilities();
 //        cap.setCapability("app", appRelease.getAbsolutePath());
-        cap.setCapability("app", "D:\\DatHdbank\\documents\\UAT\\mABHDBank\\drivers\\app-release.apk");
+        cap.setCapability("app", "D:\\DatHdbank\\UAT\\mABHDBank\\drivers\\app-release.apk");
         cap.setCapability("platformName", "android");
         cap.setCapability("deviceName", "418b9b02");
         cap.setCapability("appPackage", "com.vnpay.hdbank");

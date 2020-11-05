@@ -143,7 +143,7 @@ public class FlowerBookingStepdefs extends TestBase {
     }
     private double getTransferredAmount() throws Exception {
         List<AndroidElement> transferredAmountList = (List<AndroidElement>) androidDriver.findElements(By.xpath("//android.widget.TextView[contains(@text,'VND')]"));
-        String transferredAmount = transferredAmountList.get(1).getText();
+        String transferredAmount = transferredAmountList.get(0).getText();
         transferredAmount = transferredAmount.replace(" VND", "");
         transferredAmount = transferredAmount.replace(",", "");
         System.out.println("**************** Transferred Amount   " + transferredAmount);
@@ -327,8 +327,21 @@ public class FlowerBookingStepdefs extends TestBase {
         androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Lịch sử GD']")).click();
     }
 
-    @When("^I login with \"([^\"]*)\" and \"([^\"]*)\" without reset$")
-    public void iLoginWithAndWithoutReset(String arg0, String arg1) throws Exception {
+    @Then("^I verify that transferredAmount is correct$")
+    public void iVerifyThatTransferredAmountIsCorrect() throws Exception{
+        String ammount = androidDriver.findElement(By.xpath("//androidx.recyclerview.widget.RecyclerView[@index='3']/android.widget.LinearLayout[@index='0']/android.widget.TextView[@index='1']")).getText();
+        ammount = ammount.replace(" VND", "");
+        ammount = ammount.replace(",", "");
+        ammount = ammount.replace("-", "");
+        System.out.println("**************** Amount   " + ammount);
+        System.out.println("**************** Transferred Amount   " + d_transferredAmount);
+        Double a = Double.parseDouble(ammount);
+        assertEquals(a,  d_transferredAmount);
+    }
+
+    @When("^I login with \"([^\"]*)\" and \"([^\"]*)\" without new install$")
+    public void iLoginWithAndWithoutNewInstall(String arg0, String arg1) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
         // Write code here that turns the phrase above into concrete actions
         try {
             if (androidDriver.findElement(By.xpath("//android.widget.LinearLayout[@index='8']/android.widget.RelativeLayout[@index='0']/android.widget.ImageView[@index='2']")).isDisplayed()) {
@@ -345,16 +358,10 @@ public class FlowerBookingStepdefs extends TestBase {
         androidDriver.findElement(By.xpath("//android.widget.TextView[@text='Đăng nhập']")).click();
     }
 
-    @Then("^I verify that transferredAmount is correct$")
-    public void iVerifyThatTransferredAmountIsCorrect() throws Exception{
-        String ammount = androidDriver.findElement(By.xpath("//androidx.recyclerview.widget.RecyclerView[@index='3']/android.widget.LinearLayout[@index='0']/android.widget.TextView[@index='1']")).getText();
-        ammount = ammount.replace(" VND", "");
-        ammount = ammount.replace(",", "");
-        ammount = ammount.replace("-", "");
-        System.out.println("**************** Amount   " + ammount);
-        System.out.println("**************** Transferred Amount   " + d_transferredAmount);
-        Double a = Double.parseDouble(ammount);
-        assertEquals(a,  d_transferredAmount);
+    @Then("^I choose \"([^\"]*)\" without new install$")
+    public void iChooseWithoutNewInstall(String arg0) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
+        waitElement(By.xpath("//android.widget.TextView[@text='" +arg0 + "']"));
+        androidDriver.findElement(By.xpath("//android.widget.TextView[@text='" +arg0 + "']")).click();
     }
-
 }

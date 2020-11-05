@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 20485637500,
+              "duration": 13327914899,
               "status": "passed"
             },
             "match": {
@@ -14,14 +14,14 @@
             }
           }
         ],
-        "line": 31,
-        "name": "I get invoice successfully",
+        "line": 5,
+        "name": "I check bill payment history",
         "description": "",
-        "id": "train-ticket-booking;i-get-invoice-successfully",
+        "id": "air-booking;i-check-bill-payment-history",
         "after": [
           {
             "result": {
-              "duration": 1054836300,
+              "duration": 811773500,
               "status": "passed"
             },
             "match": {
@@ -34,10 +34,10 @@
         "steps": [
           {
             "result": {
-              "duration": 304373500,
+              "duration": 56885900,
               "status": "passed"
             },
-            "line": 32,
+            "line": 6,
             "name": "I open app",
             "match": {
               "location": "StepdefsBase.iOpenApp()"
@@ -46,11 +46,11 @@
           },
           {
             "result": {
-              "duration": 7014528400,
+              "duration": 7978280201,
               "status": "passed"
             },
-            "line": 33,
-            "name": "I login with \"lananh2009\" and \"abc123\" without reset",
+            "line": 7,
+            "name": "I login with \"lananh2009\" and \"abc123\" without new install",
             "match": {
               "arguments": [
                 {
@@ -62,39 +62,39 @@
                   "offset": 31
                 }
               ],
-              "location": "FlowerBookingStepdefs.iLoginWithAndWithoutReset(String,String)"
+              "location": "FlowerBookingStepdefs.iLoginWithAndWithoutNewInstall(String,String)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 6226443900,
+              "duration": 6637240200,
               "status": "passed"
             },
-            "line": 34,
-            "name": "I do transaction with type is \"Đặt vé tàu\" in Home page 2",
+            "line": 8,
+            "name": "I do transaction with type is \"Đặt vé máy bay\" in Home page 2 without new install",
             "match": {
               "arguments": [
                 {
-                  "val": "Đặt vé tàu",
+                  "val": "Đặt vé máy bay",
                   "offset": 31
                 },
                 {
                   "val": "2",
-                  "offset": 56
+                  "offset": 60
                 }
               ],
-              "location": "FlowerBookingStepdefs.iDoTransactionWithTypeIsInHomePage(String,int)"
+              "location": "AirBookingStepdefs.iDoTransactionWithTypeIsInHomePageWithoutNewInstall(String,int)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 22777391700,
+              "duration": 38255446700,
               "status": "passed"
             },
-            "line": 35,
-            "name": "I book an one way train from \"Hà Nội\" to \"Sài Gòn\" with seat type is \"Giường nằm (khoang 6 chỗ)\"",
+            "line": 9,
+            "name": "I book an one way domestic flight from \"TP Hồ Chí Minh\" to \"Hà Nội\" on VietJet Air airline with method is Pay now",
             "match": {
               "arguments": [
                 {
@@ -102,269 +102,154 @@
                   "offset": 10
                 },
                 {
+                  "val": "domestic",
+                  "offset": 18
+                },
+                {
+                  "val": "TP Hồ Chí Minh",
+                  "offset": 40
+                },
+                {
                   "val": "Hà Nội",
-                  "offset": 30
+                  "offset": 60
                 },
                 {
-                  "val": "Sài Gòn",
-                  "offset": 42
+                  "val": "VietJet Air",
+                  "offset": 71
                 },
                 {
-                  "val": "Giường nằm (khoang 6 chỗ)",
-                  "offset": 70
+                  "val": "Pay now",
+                  "offset": 106
                 }
               ],
-              "location": "TrainBookingStepdefs.iBookAnOneWayTrainFromToWithSeatTypeIs(String,String,String,String)"
+              "location": "AirBookingStepdefs.iBookAnOneWayDomesticFlightFromTo(String,String,String,String,String,String)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 14257768800,
+              "duration": 9827391000,
               "status": "passed"
             },
-            "line": 36,
-            "name": "I choose departing and return time for one way train",
+            "line": 10,
+            "name": "I fill \"Nguyen Van A\" full name, \"Nam\" gender, \"abc123@gmail.com\" email, \"0335642318\" phone number with \"AUTO DESCRIPTION\" description",
             "match": {
               "arguments": [
                 {
-                  "val": "one way",
-                  "offset": 39
+                  "val": "Nguyen Van A",
+                  "offset": 8
+                },
+                {
+                  "val": "Nam",
+                  "offset": 34
+                },
+                {
+                  "val": "abc123@gmail.com",
+                  "offset": 48
+                },
+                {
+                  "val": "0335642318",
+                  "offset": 74
+                },
+                {
+                  "val": "AUTO DESCRIPTION",
+                  "offset": 105
                 }
               ],
-              "location": "TrainBookingStepdefs.iChooseDepartingAndReturnTimeForOneWayTrain(String)"
+              "location": "AirBookingStepdefs.iFillFullNameWithGenderEmailPhoneNumberAndDescription(String,String,String,String,String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 3668753800,
+              "duration": 1310134299,
               "status": "passed"
             },
-            "line": 37,
-            "name": "I fill passenger info as below",
+            "line": 11,
+            "name": "I check on use for Passenger information",
             "match": {
-              "location": "TrainBookingStepdefs.iFillPassengerInfoAsBelow(DataTable)"
+              "arguments": [
+                {
+                  "val": "check",
+                  "offset": 2
+                }
+              ],
+              "location": "AirBookingStepdefs.iCheckOnUseForPassengerInformation(String)"
             },
-            "rows": [
-              {
-                "cells": [
-                  "Nguyen La C",
-                  "98868942"
-                ],
-                "line": 38
-              }
-            ],
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 1149163400,
+              "duration": 12968193800,
               "status": "passed"
             },
-            "line": 39,
+            "line": 12,
+            "name": "I confirm the above flight with method is Pay now",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Pay now",
+                  "offset": 42
+                }
+              ],
+              "location": "AirBookingStepdefs.iConfirmTheAboveFlight(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2582218500,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I get amount total before doing transaction for booking airline",
+            "match": {
+              "location": "AirBookingStepdefs.iGetAmountTotalBeforeDoingTransactionForBookingAirline()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1136672000,
+              "status": "passed"
+            },
+            "line": 14,
             "name": "I scroll up page",
             "match": {
               "location": "TrainBookingStepdefs.iScrollUpPage()"
             },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 4057331900,
-              "status": "passed"
-            },
-            "line": 40,
-            "name": "I fill contact info as below",
-            "match": {
-              "location": "TrainBookingStepdefs.iFillContactInfoAsBelow(DataTable)"
-            },
-            "rows": [
-              {
-                "cells": [
-                  "302745258",
-                  "gdaf23ah34fd@gmail.com",
-                  "0903472891"
-                ],
-                "line": 41
-              }
-            ],
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 2864390000,
+              "duration": 221762300,
               "status": "passed"
             },
-            "line": 42,
-            "name": "I choose \"Xuất hóa đơn\"",
+            "line": 15,
+            "name": "I get transferred amount",
             "match": {
-              "arguments": [
-                {
-                  "val": "Xuất hóa đơn",
-                  "offset": 10
-                }
-              ],
-              "location": "FlowerBookingStepdefs.iChoose(String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1104541300,
-              "status": "passed"
-            },
-            "line": 43,
-            "name": "I scroll up",
-            "match": {
-              "location": "FlowerBookingStepdefs.iScrollUp()"
+              "location": "FlowerBookingStepdefs.iGetTransferredAmount()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 255962100,
+              "duration": 229105700,
               "status": "passed"
             },
-            "line": 44,
-            "name": "I fill \"Abc\" company name",
+            "line": 16,
+            "name": "I continue to book the above flight",
             "match": {
-              "arguments": [
-                {
-                  "val": "Abc",
-                  "offset": 8
-                }
-              ],
-              "location": "TrainBookingStepdefs.iFillCompanyName(String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1588988000,
-              "status": "passed"
-            },
-            "line": 45,
-            "name": "I fill \"2856887502\" company tax number",
-            "match": {
-              "arguments": [
-                {
-                  "val": "2856887502",
-                  "offset": 8
-                }
-              ],
-              "location": "TrainBookingStepdefs.iFillCompanyTaxNumber(String)"
+              "location": "AirBookingStepdefs.iContinueToBookTheAboveFlight()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 1999691800,
+              "duration": 5270618901,
               "status": "passed"
             },
-            "line": 46,
-            "name": "I fill \"104 phan dang luu, p14, phu nhuan,hcm\" company address",
-            "match": {
-              "arguments": [
-                {
-                  "val": "104 phan dang luu, p14, phu nhuan,hcm",
-                  "offset": 8
-                }
-              ],
-              "location": "TrainBookingStepdefs.iFillCompanyAddress(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1998964600,
-              "status": "passed"
-            },
-            "line": 47,
-            "name": "I fill \"0902238192\" company phone number",
-            "match": {
-              "arguments": [
-                {
-                  "val": "0902238192",
-                  "offset": 8
-                }
-              ],
-              "location": "TrainBookingStepdefs.iFillCompanyPhoneNumber(String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 6164083100,
-              "status": "passed"
-            },
-            "line": 48,
-            "name": "I confirm invoice and get invoice information",
-            "match": {
-              "location": "TrainBookingStepdefs.iConfirmInvoiceAndGetInvoiceInformation()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1821637200,
-              "status": "passed"
-            },
-            "line": 49,
-            "name": "I payment this train booking",
-            "match": {
-              "location": "TrainBookingStepdefs.iPaymentThisTrainBooking()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1349009700,
-              "status": "passed"
-            },
-            "line": 50,
-            "name": "I get transferred amount when booking train ticket",
-            "match": {
-              "arguments": [
-                {
-                  "val": "when booking train ticket",
-                  "offset": 25
-                }
-              ],
-              "location": "TrainBookingStepdefs.iGetTransferredAmountInPaymentService(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1110890100,
-              "status": "passed"
-            },
-            "line": 51,
-            "name": "I scroll up",
-            "match": {
-              "location": "FlowerBookingStepdefs.iScrollUp()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 272271900,
-              "status": "passed"
-            },
-            "line": 52,
-            "name": "I continue this booking",
-            "match": {
-              "location": "FlowerBookingStepdefs.iContinueThisBooking()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 5796863500,
-              "status": "passed"
-            },
-            "line": 53,
+            "line": 17,
             "name": "I input \"123456\" OTP code",
             "match": {
               "arguments": [
@@ -375,88 +260,76 @@
               ],
               "location": "FlowerBookingStepdefs.iInputOTPCode(String)"
             },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 8553768400,
-              "status": "passed"
-            },
-            "line": 54,
-            "name": "I confirm this booking",
-            "match": {
-              "location": "FlowerBookingStepdefs.iConfirmThisBooking()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 10691668700,
-              "status": "passed"
-            },
-            "line": 55,
-            "name": "I choose another exchange",
-            "match": {
-              "location": "TrainBookingStepdefs.iChooseAnotherExchange()"
-            },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 1411302000,
+              "duration": 4643762599,
               "status": "passed"
             },
-            "line": 56,
-            "name": "I click booking history",
+            "line": 18,
+            "name": "I confirm the above air transaction",
             "match": {
-              "location": "TrainBookingStepdefs.iClickBookingHistory()"
+              "location": "AirBookingStepdefs.iConfirmTheAboveAirTransaction()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 5119141900,
+              "duration": 10294795600,
               "status": "passed"
             },
-            "line": 57,
-            "name": "I choose booked train",
+            "line": 19,
+            "name": "I get information about the air booking",
             "match": {
-              "location": "TrainBookingStepdefs.iChooseBookedTrain()"
+              "location": "AirBookingStepdefs.iGetInformationAboutTheAirBooking()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2234071600,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "I click air booking history",
+            "match": {
+              "location": "AirBookingStepdefs.iClickAirBookingHistory()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4600569301,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "I click air booking detail",
+            "match": {
+              "location": "AirBookingStepdefs.iClickAirBookingDetail()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 2705084400,
+              "duration": 2361910300,
               "status": "passed"
             },
-            "line": 58,
-            "name": "I click invoice information",
+            "line": 22,
+            "name": "I verify all information about the air booking",
             "match": {
-              "location": "TrainBookingStepdefs.iClickInvoiceInformation()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 3121570500,
-              "status": "passed"
-            },
-            "line": 59,
-            "name": "I verify invoice information is correct",
-            "match": {
-              "location": "TrainBookingStepdefs.iVerifyInvoiceInformationIsCorrect()"
+              "location": "AirBookingStepdefs.iVerifyAllInformationAboutTheAirBooking()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "line": 30,
-            "name": "@KHCN_booking_train-02"
+            "line": 4,
+            "name": "@KHCN_booking_air-01"
           },
           {
-            "line": 30,
+            "line": 4,
             "name": "@UninstallAndroid"
           }
         ]
@@ -465,7 +338,7 @@
         "before": [
           {
             "result": {
-              "duration": 18102016800,
+              "duration": 12283783501,
               "status": "passed"
             },
             "match": {
@@ -473,14 +346,14 @@
             }
           }
         ],
-        "line": 62,
-        "name": "I check bill payment history",
+        "line": 25,
+        "name": "I pay air booking ticket with payment code",
         "description": "",
-        "id": "train-ticket-booking;i-check-bill-payment-history",
+        "id": "air-booking;i-pay-air-booking-ticket-with-payment-code",
         "after": [
           {
             "result": {
-              "duration": 1016039400,
+              "duration": 777323999,
               "status": "passed"
             },
             "match": {
@@ -493,10 +366,10 @@
         "steps": [
           {
             "result": {
-              "duration": 49600,
+              "duration": 73600,
               "status": "passed"
             },
-            "line": 63,
+            "line": 26,
             "name": "I open app",
             "match": {
               "location": "StepdefsBase.iOpenApp()"
@@ -505,11 +378,11 @@
           },
           {
             "result": {
-              "duration": 6747712300,
+              "duration": 7521921400,
               "status": "passed"
             },
-            "line": 64,
-            "name": "I login with \"lananh2009\" and \"abc123\" without reset",
+            "line": 27,
+            "name": "I login with \"lananh2009\" and \"abc123\" without new install",
             "match": {
               "arguments": [
                 {
@@ -521,82 +394,248 @@
                   "offset": 31
                 }
               ],
-              "location": "FlowerBookingStepdefs.iLoginWithAndWithoutReset(String,String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 4652241000,
-              "status": "passed"
-            },
-            "line": 65,
-            "name": "I choose \"Tài khoản\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Tài khoản",
-                  "offset": 10
-                }
-              ],
-              "location": "FlowerBookingStepdefs.iChoose(String)"
+              "location": "FlowerBookingStepdefs.iLoginWithAndWithoutNewInstall(String,String)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 2140596300,
+              "duration": 6735587600,
               "status": "passed"
             },
-            "line": 66,
-            "name": "I click account detail",
+            "line": 28,
+            "name": "I do transaction with type is \"Đặt vé máy bay\" in Home page 2 without new install",
             "match": {
-              "location": "FlowerBookingStepdefs.iClickAccountDetail()"
+              "arguments": [
+                {
+                  "val": "Đặt vé máy bay",
+                  "offset": 31
+                },
+                {
+                  "val": "2",
+                  "offset": 60
+                }
+              ],
+              "location": "AirBookingStepdefs.iDoTransactionWithTypeIsInHomePageWithoutNewInstall(String,int)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 3037895500,
+              "duration": 32813764200,
               "status": "passed"
             },
-            "line": 67,
-            "name": "I click payment history page",
+            "line": 29,
+            "name": "I book an one way domestic flight from \"TP Hồ Chí Minh\" to \"Hà Nội\" on VietJet Air airline with method is Pay now",
             "match": {
-              "location": "FlowerBookingStepdefs.iClickPaymentHistoryPage()"
+              "arguments": [
+                {
+                  "val": "one way",
+                  "offset": 10
+                },
+                {
+                  "val": "domestic",
+                  "offset": 18
+                },
+                {
+                  "val": "TP Hồ Chí Minh",
+                  "offset": 40
+                },
+                {
+                  "val": "Hà Nội",
+                  "offset": 60
+                },
+                {
+                  "val": "VietJet Air",
+                  "offset": 71
+                },
+                {
+                  "val": "Pay now",
+                  "offset": 106
+                }
+              ],
+              "location": "AirBookingStepdefs.iBookAnOneWayDomesticFlightFromTo(String,String,String,String,String,String)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 1791585000,
+              "duration": 10473764700,
               "status": "passed"
             },
-            "line": 68,
-            "name": "I verify that transferredAmount is correct",
+            "line": 30,
+            "name": "I fill \"Nguyen Van A\" full name, \"Nam\" gender, \"abc123@gmail.com\" email, \"0335642318\" phone number with \"AUTO DESCRIPTION\" description",
             "match": {
-              "location": "FlowerBookingStepdefs.iVerifyThatTransferredAmountIsCorrect()"
+              "arguments": [
+                {
+                  "val": "Nguyen Van A",
+                  "offset": 8
+                },
+                {
+                  "val": "Nam",
+                  "offset": 34
+                },
+                {
+                  "val": "abc123@gmail.com",
+                  "offset": 48
+                },
+                {
+                  "val": "0335642318",
+                  "offset": 74
+                },
+                {
+                  "val": "AUTO DESCRIPTION",
+                  "offset": 105
+                }
+              ],
+              "location": "AirBookingStepdefs.iFillFullNameWithGenderEmailPhoneNumberAndDescription(String,String,String,String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1384706000,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "I check on use for Passenger information",
+            "match": {
+              "arguments": [
+                {
+                  "val": "check",
+                  "offset": 2
+                }
+              ],
+              "location": "AirBookingStepdefs.iCheckOnUseForPassengerInformation(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 13291658000,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "I confirm the above flight with method is Pay later",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Pay later",
+                  "offset": 42
+                }
+              ],
+              "location": "AirBookingStepdefs.iConfirmTheAboveFlight(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5232992501,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "I get payment code",
+            "match": {
+              "location": "AirBookingStepdefs.iGetPaymentCode()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3737235001,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "I input payment code for payment",
+            "match": {
+              "location": "AirBookingStepdefs.iInputPaymentCodeForPayment()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8101659599,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "I payment air ticket booking",
+            "match": {
+              "location": "AirBookingStepdefs.iPaymentAirTicketBooking()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 6174396100,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "I input \"123456\" OTP code",
+            "match": {
+              "arguments": [
+                {
+                  "val": "123456",
+                  "offset": 9
+                }
+              ],
+              "location": "FlowerBookingStepdefs.iInputOTPCode(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4671914400,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "I confirm the above air transaction",
+            "match": {
+              "location": "AirBookingStepdefs.iConfirmTheAboveAirTransaction()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7825202400,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "I get amount total after doing transaction for booking airline",
+            "match": {
+              "location": "AirBookingStepdefs.iGetAmountTotalAfterDoingTransactionForBookingAirline()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 19199,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "I verify before total amount \u003d after total amount + ticket price amount",
+            "match": {
+              "location": "AirBookingStepdefs.iVerifyBeforeTotalAmountAfterTotalAmountTicketPriceAmount()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "line": 61,
-            "name": "@KHCN_booking_train-03"
+            "line": 24,
+            "name": "@KHCN_booking_air-02"
           },
           {
-            "line": 61,
+            "line": 24,
             "name": "@UninstallAndroid"
           }
         ]
       }
     ],
-    "name": "Train ticket Booking",
+    "name": "Air Booking",
     "description": "",
-    "id": "train-ticket-booking",
+    "id": "air-booking",
     "keyword": "Feature",
-    "uri": "KHCN_booking_train.feature",
+    "uri": "KHCN_booking_air.feature",
     "tags": [
       {
         "line": 1,
@@ -604,7 +643,7 @@
       },
       {
         "line": 1,
-        "name": "@KHCN_booking_train"
+        "name": "@KHCN_booking_air"
       }
     ]
   }

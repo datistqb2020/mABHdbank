@@ -264,12 +264,4 @@ public class TrainBookingStepdefs extends TestBase {
         assertEquals(companyAddress, address);
         assertEquals(companyPhoneNumber, phone);
     }
-
-    @Then("^I choose \"([^\"]*)\" without reset$")
-    public void iChooseWithoutReset(String arg0) throws Exception {
-        // Write code here that turns the phrase above into concrete actions
-        waitElement(By.xpath("//android.widget.TextView[@text='Tài khoản']"));
-        swipeToLeft();
-        androidDriver.findElement(By.xpath("//android.widget.TextView[@text='" +arg0 + "']")).click();
-    }
 }
